@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Polytechnic Helpdesk | Notification Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+<img src="images/logo.png" class="logo" alt="Logo">
+<h1>POLYTECHNIC HELPDESK</h1>
+<p>Notification Portal</p>
+</header>
+
+<div class="container">
+<div class="filters">
+<div class="filter-item"><label>Search</label><input id="searchInput" placeholder="Enter keyword"></div>
+<div class="filter-item"><label>Category</label><select id="categoryFilter"><option>All</option><option>Announcement</option><option>Study Material</option><option>Notice</option></select></div>
+<div class="filter-item"><label>Year</label><select id="yearFilter"><option>All</option><option>2026</option><option>2025</option></select></div>
+<div class="search-button"><button id="searchButton">Search</button></div>
+</div>
+
+<div class="table-section">
+<div class="table-title"><h2>Latest Notifications</h2></div>
+<div class="table-responsive">
+<table>
+<thead><tr><th>Date</th><th>Category</th><th>Notification</th><th>Status</th><th>Action</th></tr></thead>
+<tbody id="notificationBody"></tbody>
+</table>
+</div>
+<div class="footer"><div id="count">Showing 0 to 0 of 0 notifications</div><div id="pagination"></div></div>
+</div>
+</div>
+<script src="script.js"></script>
+</body></html>

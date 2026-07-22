@@ -1,0 +1,4 @@
+let notifications=[];
+fetch('notifications.json').then(r=>r.json()).then(d=>{notifications=d.sort((a,b)=>new Date(b.date)-new Date(a.date));load(notifications);});
+function load(arr){const b=document.getElementById('notificationBody');b.innerHTML='';arr.forEach(n=>b.innerHTML+=`<tr><td>${n.date}</td><td>${n.category}</td><td>${n.title}</td><td><span class="${n.status==='NEW'?'badge-new':'badge-active'}">${n.status}</span></td><td><a class="view-btn" href="${n.link}" target="_blank">View</a></td></tr>`);document.getElementById('count').textContent=`Showing ${arr.length?1:0} to ${arr.length} of ${arr.length} notifications`;}
+document.getElementById('searchButton').onclick=()=>{const k=searchInput.value.toLowerCase(),c=categoryFilter.value,y=yearFilter.value;load(notifications.filter(n=>n.title.toLowerCase().includes(k)&&(c==='All'||n.category===c)&&(y==='All'||n.year===y)));};
