@@ -1,28 +1,42 @@
 let notifications = [];
 
-// ==============================
+// ======================================
 // Load Notifications
-// ==============================
+// ======================================
 
 fetch("notifications.json")
-.then(response => response.json())
+.then(response => {
+
+    if (!response.ok) {
+        throw new Error("Unable to load notifications.json");
+    }
+
+    return response.json();
+
+})
 .then(data => {
 
-    notifications = data.sort(
-        (a, b) => new Date(b.date) - new Date(a.date)
-    );
+    notifications = data.sort((a, b) => {
+
+        return new Date(b.date) - new Date(a.date);
+
+    });
 
     loadCategories();
     loadYears();
     loadTable(notifications);
 
 })
-.catch(error => console.error(error));
+.catch(error => {
+
+    console.error(error);
+
+});
 
 
-// ==============================
+// ======================================
 // Load Categories Automatically
-// ==============================
+// ======================================
 
 function loadCategories(){
 
@@ -34,20 +48,21 @@ function loadCategories(){
 
     const categories =
         [...new Set(
-            notifications.map(n => n.category)
+            notifications.map(item => item.category)
         )];
 
     categories.sort();
 
-    categories.forEach(category=>{
+    categories.forEach(category => {
 
-        select.innerHTML +=
+        const option =
+            document.createElement("option");
 
-        `<option value="${category}">
+        option.value = category;
 
-            ${category}
+        option.textContent = category;
 
-        </option>`;
+        select.appendChild(option);
 
     });
 
@@ -55,9 +70,9 @@ function loadCategories(){
 
 
 
-// ==============================
+// ======================================
 // Load Years Automatically
-// ==============================
+// ======================================
 
 function loadYears(){
 
@@ -69,20 +84,21 @@ function loadYears(){
 
     const years =
         [...new Set(
-            notifications.map(n => n.year)
+            notifications.map(item => item.year)
         )];
 
     years.sort((a,b)=>b-a);
 
     years.forEach(year=>{
 
-        select.innerHTML +=
+        const option =
+            document.createElement("option");
 
-        `<option value="${year}">
+        option.value = year;
 
-            ${year}
+        option.textContent = year;
 
-        </option>`;
+        select.appendChild(option);
 
     });
 
@@ -90,9 +106,9 @@ function loadYears(){
 
 
 
-// ==============================
-// Load Notification Table
-// ==============================
+// ======================================
+// Render Notification Table
+// ======================================
 
 function loadTable(data){
 
@@ -103,49 +119,83 @@ function loadTable(data){
 
     data.forEach(notification=>{
 
-        const status =
+        let status = "";
 
-            notification.status === "NEW"
+        switch(notification.status.toUpperCase()){
 
-            ?
+            case "NEW":
 
-            `<span class="badge-new">
+                status =
 
-                NEW
+                `<span class="badge-new">
 
-            </span>`
+                    NEW
 
-            :
+                </span>`;
 
-            `<span class="badge-active">
+                break;
 
-                ACTIVE
+            case "ACTIVE":
 
-            </span>`;
+                status =
 
+                `<span class="badge-active">
 
+                    ACTIVE
+
+                </span>`;
+
+                break;
+
+            case "DEACTIVATED":
+
+                status =
+
+                `<span class="badge-deactivated">
+
+                    DEACTIVATED
+
+                </span>`;
+
+                break;
+
+            default:
+
+                status =
+
+                `<span class="badge-active">
+
+                    ACTIVE
+
+                </span>`;
+
+        }
 
         let linksHTML = "";
 
-        notification.links.forEach(link=>{
+        if(notification.links){
 
-            linksHTML +=
+            notification.links.forEach(link=>{
 
-            `<a
+                linksHTML +=
 
-                class="view-link"
+                `<a
 
-                href="${link.url}"
+                    class="view-link"
 
-                target="_blank">
+                    href="${link.url}"
 
-                ${link.name}
+                    target="_blank"
 
-            </a>`;
+                    rel="noopener">
 
-        });
+                    ${link.name}
 
+                </a>`;
 
+            });
+
+        }
 
         tbody.innerHTML +=
 
@@ -189,11 +239,9 @@ function loadTable(data){
 
 }
 
-
-
-// ==============================
-// Counter
-// ==============================
+// ======================================
+// Update Notification Counter
+// ======================================
 
 function updateCounter(total){
 
@@ -219,13 +267,17 @@ function updateCounter(total){
 
 
 
-// ==============================
+// ======================================
 // Date Format
-// ==============================
+// ======================================
 
 function formatDate(date){
 
-    return new Date(date).toLocaleDateString(
+    const d = new Date(date);
+
+    if(isNaN(d)) return date;
+
+    return d.toLocaleDateString(
 
         "en-GB",
 
@@ -245,28 +297,54 @@ function formatDate(date){
 
 
 
-// ==============================
-// Search
-// ==============================
+// ======================================
+// Search Events
+// ======================================
 
-document
-.getElementById("searchButton")
-.addEventListener("click",searchNotification);
+const searchButton =
+document.getElementById("searchButton");
 
+if(searchButton){
 
-document
-.getElementById("searchInput")
-.addEventListener("keyup",function(e){
+    searchButton.addEventListener(
 
-    if(e.key==="Enter"){
+        "click",
 
-        searchNotification();
+        searchNotification
 
-    }
+    );
 
-});
+}
 
 
+const searchInput =
+document.getElementById("searchInput");
+
+if(searchInput){
+
+    searchInput.addEventListener(
+
+        "keyup",
+
+        function(e){
+
+            if(e.key==="Enter"){
+
+                searchNotification();
+
+            }
+
+        }
+
+    );
+
+}
+
+
+
+// ======================================
+// Search Function
+// ======================================
 
 function searchNotification(){
 
@@ -275,7 +353,8 @@ function searchNotification(){
         document
         .getElementById("searchInput")
         .value
-        .toLowerCase();
+        .toLowerCase()
+        .trim();
 
     const category =
 
@@ -293,35 +372,39 @@ function searchNotification(){
 
         notifications.filter(notification=>{
 
-            return(
+            const titleMatch =
 
                 notification.title
                 .toLowerCase()
-                .includes(keyword)
+                .includes(keyword);
+
+            const categoryMatch =
+
+                category==="All"
+
+                ||
+
+                notification.category===category;
+
+            const yearMatch =
+
+                year==="All"
+
+                ||
+
+                notification.year===year;
+
+            return (
+
+                titleMatch
 
                 &&
 
-                (
-
-                    category==="All"
-
-                    ||
-
-                    notification.category===category
-
-                )
+                categoryMatch
 
                 &&
 
-                (
-
-                    year==="All"
-
-                    ||
-
-                    notification.year===year
-
-                )
+                yearMatch
 
             );
 
@@ -330,3 +413,53 @@ function searchNotification(){
     loadTable(result);
 
 }
+
+
+
+// ======================================
+// Reset Filters (Optional)
+// ======================================
+
+function resetFilters(){
+
+    document
+    .getElementById("searchInput")
+    .value="";
+
+    document
+    .getElementById("categoryFilter")
+    .value="All";
+
+    document
+    .getElementById("yearFilter")
+    .value="All";
+
+    loadTable(notifications);
+
+}
+
+
+
+// ======================================
+// Sort by Latest (Optional Helper)
+// ======================================
+
+function sortLatest(){
+
+    notifications.sort(
+
+        (a,b)=>
+
+        new Date(b.date)-new Date(a.date)
+
+    );
+
+    loadTable(notifications);
+
+}
+
+
+
+// ======================================
+// End of File
+// ======================================
