@@ -1,43 +1,201 @@
 [
   {
     "id": 1,
-    "date": "2026-07-22",
-    "year": "2026",
-    "category": "Announcement",
-    "title": "Invitation to Contribute Academic Resources for Polytechnic Helpdesk",
+    "date": "2025-08-07",
+    "year": "2025",
+    "category": "IS Codes",
+    "title": "Indian Standard (IS) Codes are Available Now!",
     "status": "NEW",
     "links": [
       {
-        "name": "View Link 1",
-        "url": "https://forms.gle/3KxtEEMvxyJFuNXZ8"
-      },
-      {
-        "name": "View Link 2",
-        "url": "https://polytechnichelpdesk.github.io/"
+        "name": "View",
+        "url": "https://infowebuseras.wixsite.com/polytechnichelpdesk/gadgets"
       }
     ]
   },
   {
     "id": 2,
-    "date": "2026-07-21",
-    "year": "2026",
-    "category": "Study Material",
-    "title": "Availability of eBooks and Study Materials for Civil Engineering Students",
+    "date": "2025-08-07",
+    "year": "2025",
+    "category": "Class Routines",
+    "title": "Preliminary Class Routine For 5th Semester Civil Engineering Only (Assam Engineering Institute)",
     "status": "NEW",
     "links": [
       {
         "name": "View",
-        "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1007/"
+        "url": "https://drive.google.com/file/d/12S3y8F2n9Bjef23e7u1jF_rtj48FQHz8/view?usp=drive_link"
       }
     ]
   },
   {
     "id": 3,
+    "date": "2025-11-18",
+    "year": "2025",
+    "category": "Study Materials",
+    "title": "Study Materials for 5th Semester Civil Engineering",
+    "status": "NEW",
+    "links": [
+      {
+        "name": "View",
+        "url": "https://infowebuseras.wixsite.com/civil/copy-of-4th-sem"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "date": "2025-12-06",
+    "year": "2025",
+    "category": "Announcement",
+    "title": "Important Announcement: External Website Under Maintenance",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "View",
+        "url": "https://drive.google.com/file/d/1M8h8KJ8-Bp_qyxsaeKCKPW1bBWncVDdy/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "date": "2026-01-27",
+    "year": "2026",
+    "category": "Class Routines",
+    "title": "6th Semester Class Routine for Civil Engineering (Assam Engineering Institute)",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "View",
+        "url": "https://drive.google.com/file/d/1y9Rbb3XGw3Q5y54kZYh7eNcsHutsOtKm/view"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "date": "2026-06-10",
+    "year": "2026",
+    "category": "Newsletter",
+    "title": "KALEIDOSCOPE (2025-26) Newsletter (Assam Engineering Institute)",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "View",
+        "url": "https://drive.google.com/file/d/1aoRMf5ne0HoGf45hM3LxIlrt-ak2HbPb/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "date": "2026-06-18",
+    "year": "2026",
+    "category": "Notice",
+    "title": "Polytechnic Helpdesk is under maintenance. Sorry for the inconvenience",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "View",
+        "url": "https://drive.google.com/file/d/1afD9CLO_I2MRUGQ13dLY-VsSy3q_lkfy/view"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "date": "2026-06-24",
+    "year": "2026",
+    "category": "Answer Key",
+    "title": "JLEE & JMEE 2026 Provisional Answer Key is Available to Download",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "JLEE 2026 Answer Key",
+        "url": "https://drive.google.com/file/d/1TIIn6tqDa-S-GCUI6M-Eg9PqmPJdNAxh/view?usp=drive_link"
+      },
+      {
+        "name": "JMEE 2026 Answer Key",
+        "url": "https://drive.google.com/file/d/1C4cMTjR9nP7opcpAGRw_c_F8b0FvZp5t/view?usp=sharing"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "date": "2026-06-30",
+    "year": "2026",
+    "category": "Academic Calendar",
+    "title": "SCTE Academic Calendar is Available to Download!",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "Academic Calendar 2024-25",
+        "url": "https://aei.ac.in/wp-content/uploads/2024/09/Academic-Calander-2024-25.pdf"
+      },
+      {
+        "name": "Academic Calendar 2025-26",
+        "url": "https://scteassam.com/calendar/e4da3b7fbbce2345d7772b0674a318d5.pdf"
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "date": "2026-07-01",
+    "year": "2026",
+    "category": "Result",
+    "title": "JLEE & JMEE 2026 Result/Scorecard Now Available To Download",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "View Result",
+        "url": "https://astu.formsrec.in/ASTU_JMEE_JLEE/"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "date": "2026-07-03",
+    "year": "2026",
+    "category": "PYQs",
+    "title": "Previous Year Question Papers (PYQs) for all semesters of Civil Engineering are now available for download",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "View",
+        "url": "https://drive.google.com/file/d/1YezZg08hnTtkgThdlRxVAdM8yyFS1MdY/view?usp=drive_link"
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "date": "2026-07-11",
+    "year": "2026",
+    "category": "Notice",
+    "title": "List of Holidays for the Year 2026 in the State of Assam",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "View",
+        "url": "https://gad.assam.gov.in/sites/default/files/public_utility/Holiday%20List%20%2C%202026.pdf"
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "date": "2026-07-15",
+    "year": "2026",
+    "category": "Notice",
+    "title": "Important Notice: Online Application for Original Diploma Certificate for Diploma Pass-Out Students",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "View",
+        "url": "https://drive.google.com/file/d/1fwEOcESDUhkhMDAiUjG51C3Y9xG4umQL/view?usp=sharing"
+      }
+    ]
+  },
+  {
+    "id": 14,
     "date": "2026-07-17",
     "year": "2026",
     "category": "Notice",
     "title": "Temporary Technical Issues on the Sewa Setu Portal During Original Diploma Certificate Application",
-    "status": "NEW",
+    "status": "ACTIVE",
     "links": [
       {
         "name": "View",
@@ -46,16 +204,30 @@
     ]
   },
   {
-    "id": 4,
-    "date": "2026-07-15",
+    "id": 15,
+    "date": "2026-07-21",
     "year": "2026",
     "category": "Notice",
-    "title": "Online Application for Original Diploma Certificate for Diploma Pass-Out Students",
+    "title": "Availability of eBooks and Study Materials for Civil Engineering Students",
     "status": "ACTIVE",
     "links": [
       {
         "name": "View",
-        "url": "https://drive.google.com/file/d/1fwEOcESDUhkhMDAiUjG51C3Y9xG4umQL/view"
+        "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1007/"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "date": "2026-07-22",
+    "year": "2026",
+    "category": "Notice",
+    "title": "Important Notice: Invitation to Contribute Academic Resources for Polytechnic Helpdesk",
+    "status": "ACTIVE",
+    "links": [
+      {
+        "name": "View",
+        "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1008/"
       }
     ]
   }
