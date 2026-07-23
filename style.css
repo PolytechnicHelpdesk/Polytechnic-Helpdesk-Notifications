@@ -1,7 +1,7 @@
-/* =====================================================
-   Polytechnic Helpdesk Notification Portal
-   Version 3.0
-===================================================== */
+/*==================================================
+    Polytechnic Helpdesk Notification Portal
+    Version 3.5
+==================================================*/
 
 *{
     margin:0;
@@ -11,14 +11,14 @@
 }
 
 body{
-    background:#f3f6fb;
-    color:#212529;
+    background:#f4f7fb;
+    color:#222;
     line-height:1.5;
 }
 
-/* ===========================
-   HEADER
-=========================== */
+/*==============================
+HEADER
+==============================*/
 
 .header{
 
@@ -26,11 +26,11 @@ body{
 
     color:#fff;
 
-    padding:24px 20px;
-
     text-align:center;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.12);
+    padding:25px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
 
 }
 
@@ -44,47 +44,41 @@ body{
 
 .logo{
 
-    width:80px;
+    width:82px;
 
     background:#fff;
 
-    border-radius:10px;
-
     padding:6px;
 
-    margin-bottom:10px;
+    border-radius:10px;
+
+    margin-bottom:12px;
 
 }
 
 .header h1{
 
-    font-size:34px;
+    font-size:36px;
 
     font-weight:700;
-
-    letter-spacing:.5px;
 
 }
 
 .header p{
 
-    margin-top:4px;
+    margin-top:5px;
 
-    font-size:16px;
-
-    opacity:.95;
+    font-size:17px;
 
 }
 
-
-
-/* ===========================
-   MAIN CONTAINER
-=========================== */
+/*==============================
+CONTAINER
+==============================*/
 
 .container{
 
-    max-width:1300px;
+    max-width:1350px;
 
     margin:25px auto;
 
@@ -92,11 +86,9 @@ body{
 
 }
 
-
-
-/* ===========================
-   FILTERS
-=========================== */
+/*==============================
+SEARCH PANEL
+==============================*/
 
 .filters{
 
@@ -108,11 +100,11 @@ body{
 
     background:#fff;
 
-    padding:18px;
+    padding:20px;
 
     border-radius:10px;
 
-    border:1px solid #dfe4ea;
+    border:1px solid #d9dee6;
 
     margin-bottom:22px;
 
@@ -132,9 +124,9 @@ body{
 
     font-weight:600;
 
-    margin-bottom:6px;
-
     color:#495057;
+
+    margin-bottom:6px;
 
 }
 
@@ -154,8 +146,6 @@ body{
 
     transition:.2s;
 
-    background:#fff;
-
 }
 
 .filter-item input:focus,
@@ -166,11 +156,9 @@ body{
 
     border-color:#0F4C81;
 
-    box-shadow:0 0 0 3px rgba(15,76,129,.12);
+    box-shadow:0 0 0 3px rgba(15,76,129,.15);
 
 }
-
-/* SEARCH BUTTON */
 
 .search-button{
 
@@ -206,21 +194,19 @@ body{
 
 .search-button button:hover{
 
-    background:#0b3c68;
+    background:#0b3d69;
 
 }
 
-
-
-/* ===========================
-   TABLE
-=========================== */
+/*==============================
+TABLE
+==============================*/
 
 .table-section{
 
     background:#fff;
 
-    border:1px solid #dfe4ea;
+    border:1px solid #d9dee6;
 
     border-radius:10px;
 
@@ -230,19 +216,17 @@ body{
 
 .table-title{
 
+    padding:18px 22px;
+
     background:#eef4fb;
 
-    padding:16px 20px;
-
-    border-bottom:1px solid #dfe4ea;
+    border-bottom:1px solid #d9dee6;
 
 }
 
 .table-title h2{
 
-    font-size:20px;
-
-    font-weight:700;
+    font-size:22px;
 
 }
 
@@ -252,11 +236,17 @@ body{
 
 }
 
+/*==============================
+TABLE BORDER
+==============================*/
+
 table{
 
     width:100%;
 
     border-collapse:collapse;
+
+    border:1px solid #d6dde7;
 
 }
 
@@ -274,49 +264,49 @@ th{
 
     background:#eef4fb;
 
+    color:#0F4C81;
+
     font-size:13px;
 
     font-weight:700;
 
-    color:#0F4C81;
-
-    padding:12px;
-
-    border-bottom:1px solid #dfe4ea;
-
     text-align:left;
+
+    padding:13px;
+
+    border:1px solid #d6dde7;
 
 }
 
 td{
 
-    padding:11px 12px;
-
-    border-bottom:1px solid #edf0f3;
-
     font-size:13px;
 
+    padding:12px;
+
     vertical-align:top;
+
+    border:1px solid #e2e7ef;
 
 }
 
 tbody tr:nth-child(even){
 
-    background:#fafcff;
+    background:#fbfcfe;
 
 }
 
 tbody tr:hover{
 
-    background:#f4f8ff;
+    background:#f2f8ff;
 
 }
 
-/* Notification */
+/*==============================
+NOTIFICATION
+==============================*/
 
 .notification-title{
-
-    font-size:13px;
 
     line-height:1.55;
 
@@ -324,21 +314,23 @@ tbody tr:hover{
 
 }
 
-/* Category */
+/*==============================
+CATEGORY
+==============================*/
 
 td:nth-child(2){
 
-    font-size:12px;
+    color:#0F4C81;
 
     font-weight:600;
 
-    color:#0F4C81;
+    font-size:12px;
 
 }
 
-/* ===========================
-   STATUS BADGES
-=========================== */
+/*==============================
+STATUS BADGES
+==============================*/
 
 .badge-new,
 .badge-active,
@@ -354,9 +346,9 @@ td:nth-child(2){
 
     font-weight:700;
 
-    letter-spacing:.3px;
-
     color:#fff;
+
+    letter-spacing:.3px;
 
 }
 
@@ -379,14 +371,13 @@ td:nth-child(2){
 }
 
 
-
-/* ===========================
-   ACTION LINKS
-=========================== */
+/*==============================
+ACTION LINKS
+==============================*/
 
 .action-links{
 
-    min-width:170px;
+    min-width:190px;
 
 }
 
@@ -398,11 +389,11 @@ td:nth-child(2){
 
     color:#0F4C81;
 
-    text-decoration:none;
-
     font-size:13px;
 
     font-weight:600;
+
+    text-decoration:none;
 
     transition:.2s;
 
@@ -416,11 +407,16 @@ td:nth-child(2){
 
 }
 
+.view-link::before{
+
+    content:"🔗 ";
+
+}
 
 
-/* ===========================
-   FOOTER
-=========================== */
+/*==============================
+FOOTER
+==============================*/
 
 .footer{
 
@@ -430,23 +426,15 @@ td:nth-child(2){
 
     align-items:center;
 
-    gap:15px;
+    gap:20px;
 
-    padding:15px 20px;
+    padding:16px 20px;
 
-    border-top:1px solid #dfe4ea;
+    border-top:1px solid #d9dee6;
 
     font-size:13px;
 
-    color:#555;
-
-}
-
-#pagination{
-
-    display:flex;
-
-    gap:6px;
+    background:#fff;
 
 }
 
@@ -454,19 +442,18 @@ td:nth-child(2){
 
     text-align:center;
 
-    padding:18px;
-
     color:#666;
 
     font-size:13px;
 
+    padding:18px;
+
 }
 
 
-
-/* =====================================================
-   MOBILE
-===================================================== */
+/*=====================================================
+MOBILE
+=====================================================*/
 
 @media (max-width:768px){
 
@@ -499,6 +486,7 @@ td:nth-child(2){
     padding:12px;
 
 }
+
 
 /* FILTERS */
 
@@ -534,7 +522,8 @@ td:nth-child(2){
 
 }
 
-/* TABLE -> CARD */
+
+/* TABLE TO CARD */
 
 table,
 thead,
@@ -571,9 +560,12 @@ tbody tr{
 
     margin-bottom:14px;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.05);
+    box-shadow:0 2px 8px rgba(0,0,0,.06);
 
 }
+
+
+/* REMOVE TABLE BORDER */
 
 td{
 
@@ -583,9 +575,8 @@ td{
 
     margin-bottom:8px;
 
-    font-size:12px;
-
 }
+
 
 /* DATE */
 
@@ -599,27 +590,29 @@ td:nth-child(1){
 
 }
 
+
 /* CATEGORY */
 
 td:nth-child(2){
 
     display:inline-block;
 
-    margin:8px 0;
+    background:#EAF2FF;
+
+    color:#0F4C81;
 
     padding:4px 10px;
 
     border-radius:20px;
 
-    background:#EAF2FF;
-
-    color:#0F4C81;
-
     font-size:11px;
 
     font-weight:600;
 
+    margin:6px 0;
+
 }
+
 
 /* TITLE */
 
@@ -635,7 +628,8 @@ td:nth-child(2){
 
 }
 
-/* STATUS */
+
+/* BADGES */
 
 .badge-new,
 .badge-active,
@@ -646,6 +640,7 @@ td:nth-child(2){
     padding:4px 8px;
 
 }
+
 
 /* LINKS */
 
@@ -659,33 +654,42 @@ td:nth-child(2){
 
     display:block;
 
-    text-align:center;
+    width:100%;
 
     background:#0F4C81;
 
     color:#fff;
 
+    text-align:center;
+
     padding:10px;
 
     border-radius:8px;
-
-    margin-bottom:8px;
 
     font-size:12px;
 
     text-decoration:none;
 
+    margin-bottom:8px;
+
+}
+
+.view-link::before{
+
+    content:"";
+
 }
 
 .view-link:hover{
 
-    background:#0b3c68;
+    background:#0b3d69;
 
     color:#fff;
 
     text-decoration:none;
 
 }
+
 
 /* FOOTER */
 
