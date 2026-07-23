@@ -6,7 +6,16 @@
     "category": "Announcement",
     "title": "Invitation to Contribute Academic Resources for Polytechnic Helpdesk",
     "status": "NEW",
-    "link": "https://forms.gle/3KxtEEMvxyJFuNXZ8"
+    "links": [
+      {
+        "name": "View Link 1",
+        "url": "https://forms.gle/3KxtEEMvxyJFuNXZ8"
+      },
+      {
+        "name": "View Link 2",
+        "url": "https://polytechnichelpdesk.github.io/"
+      }
+    ]
   },
   {
     "id": 2,
@@ -15,7 +24,12 @@
     "category": "Study Material",
     "title": "Availability of eBooks and Study Materials for Civil Engineering Students",
     "status": "NEW",
-    "link": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1007/"
+    "links": [
+      {
+        "name": "View",
+        "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1007/"
+      }
+    ]
   },
   {
     "id": 3,
@@ -24,7 +38,12 @@
     "category": "Notice",
     "title": "Temporary Technical Issues on the Sewa Setu Portal During Original Diploma Certificate Application",
     "status": "NEW",
-    "link": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1006/"
+    "links": [
+      {
+        "name": "View",
+        "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1006/"
+      }
+    ]
   },
   {
     "id": 4,
@@ -33,6 +52,11 @@
     "category": "Notice",
     "title": "Online Application for Original Diploma Certificate for Diploma Pass-Out Students",
     "status": "ACTIVE",
-    "link": "https://drive.google.com/file/d/1fwEOcESDUhkhMDAiUjG51C3Y9xG4umQL/view"
+    "links": [
+      {
+        "name": "View",
+        "url": "https://drive.google.com/file/d/1fwEOcESDUhkhMDAiUjG51C3Y9xG4umQL/view"
+      }
+    ]
   }
 ]

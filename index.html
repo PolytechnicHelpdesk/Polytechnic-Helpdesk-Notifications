@@ -1,35 +1,282 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+
+<head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Polytechnic Helpdesk | Notification Portal</title>
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Polytechnic Helpdesk | Notification Portal
+</title>
+
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
+
 <header class="header">
-<img src="images/logo.png" class="logo" alt="Logo">
-<h1>POLYTECHNIC HELPDESK</h1>
-<p>Notification Portal</p>
+
+    <div class="header-content">
+
+        <img
+        src="images/logo.png"
+        class="logo"
+        alt="Polytechnic Helpdesk Logo">
+
+        <h1>
+            POLYTECHNIC HELPDESK
+        </h1>
+
+        <p>
+            Notification Portal
+        </p>
+
+    </div>
+
 </header>
 
-<div class="container">
-<div class="filters">
-<div class="filter-item"><label>Search</label><input id="searchInput" placeholder="Enter keyword"></div>
-<div class="filter-item"><label>Category</label><select id="categoryFilter"><option>All</option><option>Announcement</option><option>Study Material</option><option>Notice</option></select></div>
-<div class="filter-item"><label>Year</label><select id="yearFilter"><option>All</option><option>2026</option><option>2025</option></select></div>
-<div class="search-button"><button id="searchButton">Search</button></div>
-</div>
 
-<div class="table-section">
-<div class="table-title"><h2>Latest Notifications</h2></div>
-<div class="table-responsive">
-<table>
-<thead><tr><th>Date</th><th>Category</th><th>Notification</th><th>Status</th><th>Action</th></tr></thead>
-<tbody id="notificationBody"></tbody>
-</table>
-</div>
-<div class="footer"><div id="count">Showing 0 to 0 of 0 notifications</div><div id="pagination"></div></div>
-</div>
-</div>
+
+<main class="container">
+
+    <!-- ===================== -->
+    <!-- SEARCH PANEL -->
+    <!-- ===================== -->
+
+    <section class="filters">
+
+        <div class="filter-item">
+
+            <label for="searchInput">
+
+                Search Notification
+
+            </label>
+
+            <input
+
+                type="text"
+
+                id="searchInput"
+
+                placeholder="Enter keyword..."
+
+            >
+
+        </div>
+
+
+
+        <div class="filter-item">
+
+            <label>
+
+                Category
+
+            </label>
+
+            <select id="categoryFilter">
+
+                <option value="All">
+
+                    All Categories
+
+                </option>
+
+                <option>
+
+                    Announcement
+
+                </option>
+
+                <option>
+
+                    Study Material
+
+                </option>
+
+                <option>
+
+                    Notice
+
+                </option>
+
+                <option>
+
+                    Certificate
+
+                </option>
+
+                <option>
+
+                    Website Update
+
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="filter-item">
+
+            <label>
+
+                Year
+
+            </label>
+
+            <select id="yearFilter">
+
+                <option value="All">
+
+                    All Years
+
+                </option>
+
+                <option>
+
+                    2026
+
+                </option>
+
+                <option>
+
+                    2025
+
+                </option>
+
+                <option>
+
+                    2024
+
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <div class="search-button">
+
+            <button id="searchButton">
+
+                🔍 Search
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ===================== -->
+    <!-- TABLE -->
+    <!-- ===================== -->
+
+    <section class="table-section">
+
+        <div class="table-title">
+
+            <h2>
+
+                Latest Notifications
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="table-responsive">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th width="12%">
+
+                            Date
+
+                        </th>
+
+                        <th width="16%">
+
+                            Category
+
+                        </th>
+
+                        <th width="47%">
+
+                            Notification
+
+                        </th>
+
+                        <th width="10%">
+
+                            Status
+
+                        </th>
+
+                        <th width="15%">
+
+                            Action
+
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+
+                <tbody id="notificationBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+
+        <div class="footer">
+
+            <div id="count">
+
+                Showing 0 to 0 of 0 notifications
+
+            </div>
+
+            <div id="pagination">
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<footer class="site-footer">
+
+    © 2026 Polytechnic Helpdesk
+
+</footer>
+
 <script src="script.js"></script>
-</body></html>
+
+</body>
+
+</html>
