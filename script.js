@@ -1,6 +1,9 @@
 let notifications = [];
 
+// ==============================
 // Load Notifications
+// ==============================
+
 fetch("notifications.json")
 .then(response => response.json())
 .then(data => {
@@ -9,59 +12,156 @@ fetch("notifications.json")
         (a, b) => new Date(b.date) - new Date(a.date)
     );
 
+    loadCategories();
+    loadYears();
     loadTable(notifications);
 
 })
 .catch(error => console.error(error));
 
 
-// ============================
+// ==============================
+// Load Categories Automatically
+// ==============================
+
+function loadCategories(){
+
+    const select =
+        document.getElementById("categoryFilter");
+
+    select.innerHTML =
+        `<option value="All">All Categories</option>`;
+
+    const categories =
+        [...new Set(
+            notifications.map(n => n.category)
+        )];
+
+    categories.sort();
+
+    categories.forEach(category=>{
+
+        select.innerHTML +=
+
+        `<option value="${category}">
+
+            ${category}
+
+        </option>`;
+
+    });
+
+}
+
+
+
+// ==============================
+// Load Years Automatically
+// ==============================
+
+function loadYears(){
+
+    const select =
+        document.getElementById("yearFilter");
+
+    select.innerHTML =
+        `<option value="All">All Years</option>`;
+
+    const years =
+        [...new Set(
+            notifications.map(n => n.year)
+        )];
+
+    years.sort((a,b)=>b-a);
+
+    years.forEach(year=>{
+
+        select.innerHTML +=
+
+        `<option value="${year}">
+
+            ${year}
+
+        </option>`;
+
+    });
+
+}
+
+
+
+// ==============================
 // Load Notification Table
-// ============================
+// ==============================
 
 function loadTable(data){
 
-    const tbody = document.getElementById("notificationBody");
+    const tbody =
+        document.getElementById("notificationBody");
 
     tbody.innerHTML = "";
 
     data.forEach(notification=>{
 
-        let status = notification.status === "NEW"
-            ? `<span class="badge-new">NEW</span>`
-            : `<span class="badge-active">ACTIVE</span>`;
+        const status =
 
-        // Multiple Links
+            notification.status === "NEW"
+
+            ?
+
+            `<span class="badge-new">
+
+                NEW
+
+            </span>`
+
+            :
+
+            `<span class="badge-active">
+
+                ACTIVE
+
+            </span>`;
+
+
 
         let linksHTML = "";
 
-        if(notification.links){
+        notification.links.forEach(link=>{
 
-            notification.links.forEach(link=>{
+            linksHTML +=
 
-                linksHTML += `
+            `<a
 
-                <a class="view-link"
-                   href="${link.url}"
-                   target="_blank">
+                class="view-link"
 
-                    ${link.name}
+                href="${link.url}"
 
-                </a>
+                target="_blank">
 
-                `;
+                ${link.name}
 
-            });
+            </a>`;
 
-        }
+        });
 
-        tbody.innerHTML += `
 
-        <tr>
 
-            <td>${formatDate(notification.date)}</td>
+        tbody.innerHTML +=
 
-            <td>${notification.category}</td>
+        `<tr>
+
+            <td>
+
+                ${formatDate(notification.date)}
+
+            </td>
+
+            <td>
+
+                ${notification.category}
+
+            </td>
 
             <td class="notification-title">
 
@@ -81,9 +181,7 @@ function loadTable(data){
 
             </td>
 
-        </tr>
-
-        `;
+        </tr>`;
 
     });
 
@@ -93,55 +191,72 @@ function loadTable(data){
 
 
 
-// ============================
-// Date Format
-// ============================
-
-function formatDate(date){
-
-    const d = new Date(date);
-
-    return d.toLocaleDateString("en-GB",{
-
-        day:"2-digit",
-        month:"short",
-        year:"numeric"
-
-    });
-
-}
-
-
-
-// ============================
+// ==============================
 // Counter
-// ============================
+// ==============================
 
 function updateCounter(total){
 
-    document.getElementById("count").innerHTML =
+    const count =
+        document.getElementById("count");
 
-        total
+    if(total===0){
 
-        ? `Showing 1 to ${total} of ${total} notifications`
+        count.innerHTML =
+        "Showing 0 to 0 of 0 notifications";
 
-        : "Showing 0 to 0 of 0 notifications";
+    }
+
+    else{
+
+        count.innerHTML =
+
+        `Showing 1 to ${total} of ${total} notifications`;
+
+    }
 
 }
 
 
 
-// ============================
+// ==============================
+// Date Format
+// ==============================
+
+function formatDate(date){
+
+    return new Date(date).toLocaleDateString(
+
+        "en-GB",
+
+        {
+
+            day:"2-digit",
+
+            month:"short",
+
+            year:"numeric"
+
+        }
+
+    );
+
+}
+
+
+
+// ==============================
 // Search
-// ============================
+// ==============================
 
 document
 .getElementById("searchButton")
 .addEventListener("click",searchNotification);
 
+
 document
 .getElementById("searchInput")
-.addEventListener("keyup",e=>{
+.addEventListener("keyup",function(e){
 
     if(e.key==="Enter"){
 
@@ -174,41 +289,43 @@ function searchNotification(){
         .getElementById("yearFilter")
         .value;
 
-    const result = notifications.filter(notification=>{
+    const result =
 
-        return (
+        notifications.filter(notification=>{
 
-            notification.title
-            .toLowerCase()
-            .includes(keyword)
+            return(
 
-            &&
+                notification.title
+                .toLowerCase()
+                .includes(keyword)
 
-            (
+                &&
 
-                category==="All"
+                (
 
-                ||
+                    category==="All"
 
-                notification.category===category
+                    ||
 
-            )
+                    notification.category===category
 
-            &&
+                )
 
-            (
+                &&
 
-                year==="All"
+                (
 
-                ||
+                    year==="All"
 
-                notification.year===year
+                    ||
 
-            )
+                    notification.year===year
 
-        );
+                )
 
-    });
+            );
+
+        });
 
     loadTable(result);
 
