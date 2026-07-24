@@ -824,17 +824,13 @@ PAGINATION
 
 #pagination button{
 
-    min-width:40px;
-
     height:40px;
+
+    padding:0 14px;
 
     border:none;
 
     border-radius:8px;
-
-    background:#EEF4FB;
-
-    color:#0F4C81;
 
     font-size:13px;
 
@@ -842,7 +838,17 @@ PAGINATION
 
     cursor:pointer;
 
-    transition:.25s;
+    white-space:nowrap;
+
+}
+
+#pagination button:not(:first-child):not(:last-child){
+
+    width:40px;
+
+    min-width:40px;
+
+    padding:0;
 
 }
 
@@ -876,11 +882,17 @@ DARK MODE PAGINATION
 
 body.dark #pagination button{
 
+    min-width:42px;
+
+    padding:0 14px;
+
     background:#334155;
 
     color:#F8FAFC;
 
     border:1px solid #475569;
+
+    white-space:nowrap;
 
 }
 
