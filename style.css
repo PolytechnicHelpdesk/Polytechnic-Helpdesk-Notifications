@@ -1717,15 +1717,21 @@ body.dark .suggestion.active{
 
 }
 
-body.dark .search-button button{
+body.dark .view-link{
 
     background:#2563EB;
 
+    color:#FFFFFF;
+
+    border:none;
+
 }
 
-body.dark .search-button button:hover{
+body.dark .view-link:hover{
 
     background:#1D4ED8;
+
+    color:#FFFFFF;
 
 }
 
