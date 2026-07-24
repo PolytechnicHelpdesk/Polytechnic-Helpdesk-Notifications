@@ -86,19 +86,23 @@ if(themeToggle){
 
 fetch("./notifications.json")
 
-.then(response=>{
+.then(data=>{
 
-    if(!response.ok){
+    notifications=data;
 
-        throw new Error(
+    sortNotifications();
 
-            "Unable to load notifications.json"
+    filteredNotifications=[...notifications];
 
-        );
+    loadCategories();
 
-    }
+    loadYears();
 
-    return response.json();
+    loadTheme();
+
+    renderPage();
+
+    preloadLinks();
 
 })
 
@@ -243,7 +247,6 @@ function loadYears(){
 
 function renderPage(){
 
-    document.body.classList.add("page-loaded");
 
     const start=(currentPage-1)*ITEMS_PER_PAGE;
 
@@ -281,19 +284,6 @@ function loadTable(data){
 
     tbody.innerHTML="";
 
-    tbody.classList.remove(
-
-        "page-loaded"
-
-    );
-
-    void tbody.offsetWidth;
-
-    tbody.classList.add(
-
-        "page-loaded"
-
-    );
 
     data.forEach(notification=>{
 
@@ -1119,29 +1109,6 @@ document.addEventListener("keydown",(e)=>{
 
 });
 
-// Prevent duplicate page animation
-
-function removePageAnimation(){
-
-    document.body.classList.remove("page-loaded");
-
-    void document.body.offsetWidth;
-
-    document.body.classList.add("page-loaded");
-
-}
-
-// Smooth page refresh after filtering
-
-const oldRenderPage = renderPage;
-
-renderPage = function(){
-
-    removePageAnimation();
-
-    oldRenderPage();
-
-};
 
 // ============================================
 // IMPROVED SEARCH EXPERIENCE
@@ -1219,15 +1186,7 @@ function preloadLinks(){
 // AFTER JSON LOAD
 // ============================================
 
-const originalRender = renderPage;
 
-renderPage = function(){
-
-    originalRender();
-
-    preloadLinks();
-
-};
 
 // ============================================
 // VERSION
