@@ -316,17 +316,17 @@ ACTION LINKS (Desktop Only)
 
 .view-link{
 
-    display:flex;
+    display:inline-flex;
 
     align-items:center;
 
     justify-content:center;
 
-    width:100%;
+    width:120px;
 
-    min-height:40px;
+    height:34px;
 
-    padding:8px 14px;
+    padding:0 12px;
 
     background:#0F4C81;
 
@@ -334,9 +334,9 @@ ACTION LINKS (Desktop Only)
 
     text-decoration:none;
 
-    border-radius:8px;
+    border-radius:6px;
 
-    font-size:13px;
+    font-size:12px;
 
     font-weight:600;
 
@@ -365,6 +365,7 @@ ACTION LINKS (Desktop Only)
     content:"";
 
 }
+
 
 /*==============================
 FOOTER
