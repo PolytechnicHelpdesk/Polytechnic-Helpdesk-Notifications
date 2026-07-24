@@ -3,224 +3,290 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>Polytechnic Helpdesk | Notification Portal</title>
+<title>
+Polytechnic Helpdesk | Notification Portal
+</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+href="style.css">
 
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+<!-- ================= HEADER ================= -->
 
-    <header class="header">
+<header class="header">
 
-        <div class="header-content">
+<div class="header-content">
 
-            <img src="images/logo.png"
-                 alt="Polytechnic Helpdesk"
-                 class="logo">
+<img
+src="images/logo.png"
+class="logo"
+alt="Polytechnic Helpdesk Logo">
 
-            <h1>POLYTECHNIC HELPDESK</h1>
+<h1>
 
-            <p>Notification Portal</p>
+POLYTECHNIC HELPDESK
 
-        </div>
+</h1>
 
-    </header>
+<p>
 
+Notification Portal
 
+</p>
 
-    <!-- ================= MAIN ================= -->
+</div>
 
-    <main class="container">
+</header>
 
-        <!-- ================= FILTERS ================= -->
 
-        <section class="filters">
 
-            <div class="filter-item">
+<!-- ================= MAIN ================= -->
 
-                <label for="searchInput">
+<main class="container">
 
-                    Search Notification
 
-                </label>
 
-                <input
+<!-- ================= STATISTICS ================= -->
 
-                    type="text"
+<section class="statistics">
 
-                    id="searchInput"
+<div class="stat-card">
 
-                    placeholder="Enter keyword..."
+<h3>Total</h3>
 
-                >
+<p id="totalCount">
 
-            </div>
+0
 
+</p>
 
+</div>
 
-            <div class="filter-item">
+<div class="stat-card">
 
-                <label for="categoryFilter">
+<h3>NEW</h3>
 
-                    Category
+<p id="newCount">
 
-                </label>
+0
 
-                <select id="categoryFilter">
+</p>
 
-                    <!-- Loaded Automatically -->
+</div>
 
-                </select>
+<div class="stat-card">
 
-            </div>
+<h3>ACTIVE</h3>
 
+<p id="activeCount">
 
+0
 
-            <div class="filter-item">
+</p>
 
-                <label for="yearFilter">
+</div>
 
-                    Year
+<div class="stat-card">
 
-                </label>
+<h3>DEACTIVATED</h3>
 
-                <select id="yearFilter">
+<p id="deactivatedCount">
 
-                    <!-- Loaded Automatically -->
+0
 
-                </select>
+</p>
 
-            </div>
+</div>
 
+</section>
 
 
-            <div class="search-button">
 
-                <button id="searchButton">
+<!-- ================= SEARCH PANEL ================= -->
 
-                    🔍 Search
+<section class="filters">
 
-                </button>
+<div class="filter-item">
 
-            </div>
+<label>
 
-        </section>
+Search Notification
 
+</label>
 
+<input
 
-        <!-- ================= TABLE ================= -->
+type="text"
 
-        <section class="table-section">
+id="searchInput"
 
-            <div class="table-title">
+placeholder="Search notification..."
 
-                <h2>
+>
 
-                    Latest Notifications
+</div>
 
-                </h2>
 
-            </div>
 
+<div class="filter-item">
 
+<label>
 
-            <div class="table-responsive">
+Category
 
-                <table>
+</label>
 
-                    <thead>
+<select id="categoryFilter">
 
-                        <tr>
+</select>
 
-                            <th style="width:12%">
+</div>
 
-                                Date
 
-                            </th>
 
-                            <th style="width:15%">
+<div class="filter-item">
 
-                                Category
+<label>
 
-                            </th>
+Year
 
-                            <th>
+</label>
 
-                                Notification
+<select id="yearFilter">
 
-                            </th>
+</select>
 
-                            <th style="width:10%">
+</div>
 
-                                Status
 
-                            </th>
 
-                            <th style="width:18%">
+<div class="search-button">
 
-                                Action
+<button
 
-                            </th>
+onclick="resetFilters()">
 
-                        </tr>
+Reset
 
-                    </thead>
+</button>
 
+</div>
 
+</section>
 
-                    <tbody id="notificationBody">
 
-                        <!-- Filled Automatically -->
 
-                    </tbody>
+<!-- ================= TABLE ================= -->
 
-                </table>
+<section class="table-section">
 
-            </div>
+<div class="table-title">
 
+<h2>
 
+Latest Notifications
 
-            <div class="footer">
+</h2>
 
-                <div id="count">
+</div>
 
-                    Showing 0 to 0 of 0 notifications
 
-                </div>
 
+<div class="table-responsive">
 
+<table>
 
-                <div id="pagination">
+<thead>
 
-                </div>
+<tr>
 
-            </div>
+<th width="12%">
 
-        </section>
+Date
 
-    </main>
+</th>
 
+<th width="15%">
 
+Category
 
-    <!-- ================= FOOTER ================= -->
+</th>
 
-    <footer class="site-footer">
+<th>
 
-        © 2026 Polytechnic Helpdesk. All Rights Reserved.
+Notification
 
-    </footer>
+</th>
 
+<th width="10%">
 
+Status
 
-    <script src="script.js"></script>
+</th>
+
+<th width="18%">
+
+Action
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody
+
+id="notificationBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<div class="footer">
+
+<div id="count">
+
+Showing 0 to 0 of 0 notifications
+
+</div>
+
+<div
+
+id="pagination">
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+© 2026 Polytechnic Helpdesk.
+
+All Rights Reserved.
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 

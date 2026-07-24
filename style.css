@@ -1,6 +1,6 @@
 /*==================================================
     Polytechnic Helpdesk Notification Portal
-    Version 3.5
+    Version 3.1
 ==================================================*/
 
 *{
@@ -21,55 +21,34 @@ HEADER
 ==============================*/
 
 .header{
-
     background:#0F4C81;
-
     color:#fff;
-
     text-align:center;
-
     padding:25px;
-
-    box-shadow:0 2px 8px rgba(0,0,0,.15);
-
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
 .header-content{
-
     max-width:1200px;
-
     margin:auto;
-
 }
 
 .logo{
-
     width:82px;
-
     background:#fff;
-
     padding:6px;
-
     border-radius:10px;
-
     margin-bottom:12px;
-
 }
 
 .header h1{
-
     font-size:36px;
-
     font-weight:700;
-
 }
 
 .header p{
-
     margin-top:5px;
-
     font-size:17px;
-
 }
 
 /*==============================
@@ -77,13 +56,46 @@ CONTAINER
 ==============================*/
 
 .container{
-
     max-width:1350px;
-
     margin:25px auto;
-
     padding:0 18px;
+}
 
+/*==============================
+STATISTICS
+==============================*/
+
+.statistics{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+    margin-bottom:22px;
+}
+
+.stat-card{
+    background:#fff;
+    border:1px solid #d9dee6;
+    border-radius:10px;
+    padding:18px;
+    text-align:center;
+    transition:.2s;
+}
+
+.stat-card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 4px 12px rgba(0,0,0,.08);
+}
+
+.stat-card h3{
+    font-size:14px;
+    color:#666;
+    margin-bottom:8px;
+}
+
+.stat-card p{
+    font-size:28px;
+    color:#0F4C81;
+    font-weight:700;
 }
 
 /*==============================
@@ -91,241 +103,201 @@ SEARCH PANEL
 ==============================*/
 
 .filters{
-
     display:grid;
-
     grid-template-columns:2fr 1fr 1fr 170px;
-
     gap:16px;
-
     background:#fff;
-
     padding:20px;
-
-    border-radius:10px;
-
     border:1px solid #d9dee6;
-
+    border-radius:10px;
     margin-bottom:22px;
-
 }
 
 .filter-item{
-
     display:flex;
-
     flex-direction:column;
-
 }
 
 .filter-item label{
-
     font-size:13px;
-
     font-weight:600;
-
-    color:#495057;
-
+    color:#555;
     margin-bottom:6px;
-
 }
 
 .filter-item input,
-
 .filter-item select{
-
     height:48px;
-
     border:1px solid #ced4da;
-
     border-radius:8px;
-
     padding:0 14px;
-
     font-size:14px;
-
-    transition:.2s;
-
 }
 
 .filter-item input:focus,
-
 .filter-item select:focus{
-
     outline:none;
-
     border-color:#0F4C81;
-
     box-shadow:0 0 0 3px rgba(15,76,129,.15);
-
 }
 
 .search-button{
-
     display:flex;
-
     align-items:flex-end;
-
 }
 
 .search-button button{
-
     width:100%;
-
     height:48px;
-
     border:none;
-
     border-radius:8px;
-
     background:#0F4C81;
-
     color:#fff;
-
     font-size:14px;
-
-    font-weight:600;
-
     cursor:pointer;
-
     transition:.2s;
-
 }
 
 .search-button button:hover{
-
-    background:#0b3d69;
-
+    background:#0b3c69;
 }
-
 /*==============================
 TABLE
 ==============================*/
 
 .table-section{
-
     background:#fff;
-
     border:1px solid #d9dee6;
-
     border-radius:10px;
-
     overflow:hidden;
-
 }
 
 .table-title{
-
     padding:18px 22px;
-
     background:#eef4fb;
-
     border-bottom:1px solid #d9dee6;
-
 }
 
 .table-title h2{
-
     font-size:22px;
-
+    color:#0F4C81;
 }
 
 .table-responsive{
-
     overflow-x:auto;
-
 }
 
-/*==============================
-TABLE BORDER
-==============================*/
-
 table{
-
     width:100%;
-
     border-collapse:collapse;
-
-    border:1px solid #d6dde7;
-
 }
 
 thead{
-
-    position:sticky;
-
-    top:0;
-
-    z-index:5;
-
+    background:#eef4fb;
 }
 
 th{
-
     background:#eef4fb;
-
     color:#0F4C81;
-
     font-size:13px;
-
     font-weight:700;
-
-    text-align:left;
-
     padding:13px;
-
     border:1px solid #d6dde7;
-
+    text-align:left;
+    white-space:nowrap;
 }
 
 td{
-
     font-size:13px;
-
     padding:12px;
-
-    vertical-align:top;
-
     border:1px solid #e2e7ef;
-
+    vertical-align:top;
 }
 
 tbody tr:nth-child(even){
-
     background:#fbfcfe;
-
 }
 
 tbody tr:hover{
-
     background:#f2f8ff;
-
 }
 
 /*==============================
-NOTIFICATION
+NOTIFICATION TITLE
 ==============================*/
 
 .notification-title{
-
     line-height:1.55;
-
     font-weight:500;
-
+    color:#222;
 }
 
 /*==============================
-CATEGORY
+CATEGORY BADGES
 ==============================*/
 
-td:nth-child(2){
-
-    color:#0F4C81;
-
+.category-badge{
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:20px;
+    font-size:11px;
     font-weight:600;
+    color:#fff;
+}
 
-    font-size:12px;
+.category-notice{
+    background:#0F4C81;
+}
 
+.category-announcement{
+    background:#d63384;
+}
+
+.category-pyqs{
+    background:#fd7e14;
+}
+
+.category-result{
+    background:#198754;
+}
+
+.category-newsletter{
+    background:#6f42c1;
+}
+
+.category-routine{
+    background:#795548;
+}
+
+.category-material{
+    background:#009688;
+}
+
+.category-answerkey{
+    background:#e83e8c;
+}
+
+.category-calendar{
+    background:#20c997;
+}
+
+.category-iscodes{
+    background:#6610f2;
+}
+
+/*==============================
+PINNED BADGE
+==============================*/
+
+.pin-badge{
+    display:inline-block;
+    margin-left:8px;
+    padding:2px 8px;
+    border-radius:15px;
+    background:#ffc107;
+    color:#222;
+    font-size:10px;
+    font-weight:700;
 }
 
 /*==============================
@@ -348,182 +320,172 @@ STATUS BADGES
 
     color:#fff;
 
-    letter-spacing:.3px;
-
 }
 
 .badge-new{
-
     background:#dc3545;
-
 }
 
 .badge-active{
-
     background:#198754;
-
 }
 
 .badge-deactivated{
-
     background:#6c757d;
-
 }
-
 
 /*==============================
 ACTION LINKS
 ==============================*/
 
 .action-links{
-
-    min-width:190px;
-
+    min-width:180px;
 }
 
 .view-link{
-
     display:block;
-
     padding:6px 0;
-
     color:#0F4C81;
-
-    font-size:13px;
-
-    font-weight:600;
-
     text-decoration:none;
-
+    font-size:13px;
+    font-weight:600;
     transition:.2s;
-
-}
-
-.view-link:hover{
-
-    color:#084b91;
-
-    text-decoration:underline;
-
 }
 
 .view-link::before{
-
     content:"🔗 ";
-
 }
 
+.view-link:hover{
+    color:#084b91;
+    text-decoration:underline;
+}
 
 /*==============================
 FOOTER
 ==============================*/
 
 .footer{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     gap:20px;
-
     padding:16px 20px;
-
     border-top:1px solid #d9dee6;
-
     font-size:13px;
-
     background:#fff;
+}
 
+/*==============================
+PAGINATION
+==============================*/
+
+#pagination{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+}
+
+#pagination button{
+    min-width:38px;
+    height:38px;
+    border:none;
+    border-radius:6px;
+    background:#eef4fb;
+    color:#0F4C81;
+    cursor:pointer;
+    transition:.2s;
+}
+
+#pagination button:hover{
+    background:#0F4C81;
+    color:#fff;
+}
+
+#pagination button.active{
+    background:#0F4C81;
+    color:#fff;
 }
 
 .site-footer{
-
     text-align:center;
-
     color:#666;
-
     font-size:13px;
-
     padding:18px;
-
 }
-
-
-/*=====================================================
-MOBILE
-=====================================================*/
+/*==================================================
+MOBILE VIEW
+==================================================*/
 
 @media (max-width:768px){
 
+/* Header */
+
 .header{
-
     padding:18px;
-
 }
 
 .logo{
-
     width:65px;
-
 }
 
 .header h1{
-
     font-size:24px;
-
 }
 
 .header p{
-
     font-size:13px;
-
 }
+
+/* Container */
 
 .container{
-
     padding:12px;
-
 }
 
+/* Statistics */
 
-/* FILTERS */
+.statistics{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.stat-card{
+    padding:14px;
+}
+
+.stat-card h3{
+    font-size:12px;
+}
+
+.stat-card p{
+    font-size:22px;
+}
+
+/* Search */
 
 .filters{
-
     grid-template-columns:1fr;
-
     gap:12px;
-
     padding:15px;
-
 }
 
 .filter-item label{
-
     font-size:12px;
-
 }
 
 .filter-item input,
 .filter-item select,
 .search-button button{
-
     height:42px;
-
     font-size:13px;
-
 }
 
 .search-button button{
-
     width:100%;
-
 }
 
-
-/* TABLE TO CARD */
+/* Table becomes cards */
 
 table,
 thead,
@@ -531,22 +493,18 @@ tbody,
 tr,
 td,
 th{
-
     display:block;
-
 }
 
 thead{
-
     display:none;
-
 }
 
 .table-responsive{
-
     overflow:visible;
-
 }
+
+/* Notification Card */
 
 tbody tr{
 
@@ -560,12 +518,11 @@ tbody tr{
 
     margin-bottom:14px;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    box-shadow:0 2px 8px rgba(0,0,0,.05);
 
 }
 
-
-/* REMOVE TABLE BORDER */
+/* Remove borders */
 
 td{
 
@@ -577,59 +534,53 @@ td{
 
 }
 
-
-/* DATE */
+/* Date */
 
 td:nth-child(1){
 
-    font-size:11px;
-
     color:#666;
+
+    font-size:11px;
 
     font-weight:500;
 
 }
 
-
-/* CATEGORY */
+/* Category */
 
 td:nth-child(2){
-
-    display:inline-block;
-
-    background:#EAF2FF;
-
-    color:#0F4C81;
-
-    padding:4px 10px;
-
-    border-radius:20px;
-
-    font-size:11px;
-
-    font-weight:600;
-
-    margin:6px 0;
-
-}
-
-
-/* TITLE */
-
-.notification-title{
-
-    font-size:13px;
-
-    font-weight:600;
-
-    line-height:1.45;
 
     margin:8px 0;
 
 }
 
+/* Title */
 
-/* BADGES */
+.notification-title{
+
+    font-size:14px;
+
+    line-height:1.45;
+
+    font-weight:600;
+
+    margin:8px 0;
+
+}
+
+/* Pin Badge */
+
+.pin-badge{
+
+    display:inline-block;
+
+    margin-top:6px;
+
+    margin-left:0;
+
+}
+
+/* Status */
 
 .badge-new,
 .badge-active,
@@ -641,12 +592,11 @@ td:nth-child(2){
 
 }
 
-
-/* LINKS */
+/* Links */
 
 .action-links{
 
-    margin-top:10px;
+    margin-top:12px;
 
 }
 
@@ -666,11 +616,11 @@ td:nth-child(2){
 
     border-radius:8px;
 
+    margin-bottom:8px;
+
     font-size:12px;
 
     text-decoration:none;
-
-    margin-bottom:8px;
 
 }
 
@@ -690,19 +640,87 @@ td:nth-child(2){
 
 }
 
-
-/* FOOTER */
+/* Footer */
 
 .footer{
 
     flex-direction:column;
 
-    text-align:center;
-
     gap:10px;
+
+    text-align:center;
 
     font-size:12px;
 
+}
+
+/* Pagination */
+
+#pagination{
+
+    justify-content:center;
+
+}
+
+#pagination button{
+
+    min-width:36px;
+
+    height:36px;
+
+    font-size:12px;
+
+}
+
+}
+
+/*==================================================
+SMALL MOBILE DEVICES
+==================================================*/
+
+@media (max-width:480px){
+
+.header h1{
+    font-size:21px;
+}
+
+.header p{
+    font-size:12px;
+}
+
+.logo{
+    width:58px;
+}
+
+.statistics{
+    grid-template-columns:1fr;
+}
+
+.stat-card p{
+    font-size:20px;
+}
+
+.notification-title{
+    font-size:13px;
+}
+
+.view-link{
+    font-size:11px;
+    padding:9px;
+}
+
+td:nth-child(1){
+    font-size:10px;
+}
+
+.category-badge{
+    font-size:10px;
+}
+
+.badge-new,
+.badge-active,
+.badge-deactivated{
+    font-size:8px;
 }
 
 }
