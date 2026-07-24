@@ -9,7 +9,9 @@
 content="width=device-width, initial-scale=1.0">
 
 <title>
+
 Polytechnic Helpdesk | Notification Portal
+
 </title>
 
 <link rel="stylesheet"
@@ -46,13 +48,21 @@ Notification Portal
 
 </header>
 
+<!-- ================= TOP BAR ================= -->
 
+<div class="top-bar">
+
+<button id="themeToggle">
+
+🌙 Dark Mode
+
+</button>
+
+</div>
 
 <!-- ================= MAIN ================= -->
 
 <main class="container">
-
-
 
 <!-- ================= SEARCH PANEL ================= -->
 
@@ -66,6 +76,8 @@ Search Notification
 
 </label>
 
+<div class="search-box">
+
 <input
 
 type="text"
@@ -74,11 +86,15 @@ id="searchInput"
 
 placeholder="Search notification..."
 
+autocomplete="off"
+
 >
+
+<div id="suggestions"></div>
 
 </div>
 
-
+</div>
 
 <div class="filter-item">
 
@@ -94,8 +110,6 @@ Category
 
 </div>
 
-
-
 <div class="filter-item">
 
 <label>
@@ -110,13 +124,9 @@ Year
 
 </div>
 
-
-
 <div class="search-button">
 
-<button
-
-onclick="resetFilters()">
+<button onclick="resetFilters()">
 
 Reset
 
@@ -125,8 +135,6 @@ Reset
 </div>
 
 </section>
-
-
 
 <!-- ================= TABLE ================= -->
 
@@ -141,8 +149,6 @@ Latest Notifications
 </h2>
 
 </div>
-
-
 
 <div class="table-responsive">
 
@@ -186,17 +192,13 @@ Action
 
 </thead>
 
-<tbody
-
-id="notificationBody">
+<tbody id="notificationBody">
 
 </tbody>
 
 </table>
 
 </div>
-
-
 
 <div class="footer">
 
@@ -206,9 +208,7 @@ Showing 0 to 0 of 0 notifications
 
 </div>
 
-<div
-
-id="pagination">
+<div id="pagination">
 
 </div>
 
@@ -218,15 +218,11 @@ id="pagination">
 
 </main>
 
-
-
 <!-- ================= FOOTER ================= -->
 
 <footer class="site-footer">
 
-© 2026 Polytechnic Helpdesk.
-
-All Rights Reserved.
+© 2026 Polytechnic Helpdesk. All Rights Reserved.
 
 </footer>
 

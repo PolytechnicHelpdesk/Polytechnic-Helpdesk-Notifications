@@ -1,26 +1,100 @@
 // ============================================
 // Polytechnic Helpdesk Notification Portal
-// Version 3.1
+// Version 4.0
 // ============================================
 
 let notifications = [];
 let filteredNotifications = [];
 
 const ITEMS_PER_PAGE = 10;
+
 let currentPage = 1;
 
+// ============================================
+// DARK MODE
+// ============================================
+
+const themeToggle =
+document.getElementById("themeToggle");
+
+function loadTheme(){
+
+    const savedTheme =
+    localStorage.getItem("theme");
+
+    if(savedTheme==="dark"){
+
+        document.body.classList.add("dark");
+
+        if(themeToggle){
+
+            themeToggle.innerHTML=
+            "☀️ Light Mode";
+
+        }
+
+    }
+
+}
+
+function toggleTheme(){
+
+    document.body.classList.toggle("dark");
+
+    const darkMode =
+    document.body.classList.contains("dark");
+
+    localStorage.setItem(
+
+        "theme",
+
+        darkMode
+        ? "dark"
+        : "light"
+
+    );
+
+    if(themeToggle){
+
+        themeToggle.innerHTML=
+
+        darkMode
+
+        ? "☀️ Light Mode"
+
+        : "🌙 Dark Mode";
+
+    }
+
+}
+
+if(themeToggle){
+
+    themeToggle.addEventListener(
+
+        "click",
+
+        toggleTheme
+
+    );
+
+}
 
 // ============================================
 // LOAD JSON
 // ============================================
 
-fetch("notifications.json")
+fetch("./notifications.json")
 
 .then(response=>{
 
     if(!response.ok){
 
-        throw new Error("Unable to load notifications.json");
+        throw new Error(
+
+            "Unable to load notifications.json"
+
+        );
 
     }
 
@@ -30,116 +104,160 @@ fetch("notifications.json")
 
 .then(data=>{
 
-    notifications = data;
+    notifications=data;
 
     sortNotifications();
 
-    filteredNotifications = [...notifications];
+    filteredNotifications=[...notifications];
 
     loadCategories();
 
     loadYears();
-renderPage();
+
+    loadTheme();
+
+    renderPage();
 
 })
 
-.catch(error=>console.error(error));
+.catch(error=>{
 
+    console.error(error);
 
+});
 
 // ============================================
-// SORT NOTIFICATIONS
+// SORT
 // ============================================
 
 function sortNotifications(){
 
     notifications.sort((a,b)=>{
 
-        // Pinned first
+        if(a.pinned && !b.pinned)
 
-        if(a.pinned && !b.pinned) return -1;
+            return -1;
 
-        if(!a.pinned && b.pinned) return 1;
+        if(!a.pinned && b.pinned)
 
-        // Latest first
+            return 1;
 
-        return new Date(b.date)-new Date(a.date);
+        return new Date(b.date)
+
+            - new Date(a.date);
 
     });
 
 }
 
-
-
 // ============================================
-// CATEGORY DROPDOWN
+// CATEGORY
 // ============================================
 
 function loadCategories(){
 
-    const select=document.getElementById("categoryFilter");
+    const select =
 
-    select.innerHTML='<option value="All">All Categories</option>';
+    document.getElementById(
 
-    [...new Set(notifications.map(n=>n.category))]
+        "categoryFilter"
+
+    );
+
+    select.innerHTML=
+
+    '<option value="All">All Categories</option>';
+
+    [...new Set(
+
+        notifications.map(
+
+            n=>n.category
+
+        )
+
+    )]
+
     .sort()
+
     .forEach(category=>{
 
-        select.innerHTML+=`
+        select.innerHTML+=
 
-        <option value="${category}">
+        `<option value="${category}">
 
             ${category}
 
-        </option>
-
-        `;
+        </option>`;
 
     });
 
 }
 
-
-
 // ============================================
-// YEAR DROPDOWN
+// YEAR
 // ============================================
 
 function loadYears(){
 
-    const select=document.getElementById("yearFilter");
+    const select=
 
-    select.innerHTML='<option value="All">All Years</option>';
+    document.getElementById(
 
-    [...new Set(notifications.map(n=>n.year))]
+        "yearFilter"
+
+    );
+
+    select.innerHTML=
+
+    '<option value="All">All Years</option>';
+
+    [...new Set(
+
+        notifications.map(
+
+            n=>n.year
+
+        )
+
+    )]
+
     .sort((a,b)=>b-a)
+
     .forEach(year=>{
 
-        select.innerHTML+=`
+        select.innerHTML+=
 
-        <option value="${year}">
+        `<option value="${year}">
 
             ${year}
 
-        </option>
-
-        `;
+        </option>`;
 
     });
 
 }
-
-
 // ============================================
 // RENDER CURRENT PAGE
 // ============================================
 
 function renderPage(){
 
-    const start = (currentPage - 1) * ITEMS_PER_PAGE;
-    const end = start + ITEMS_PER_PAGE;
+    document.body.classList.add("page-loaded");
 
-    const pageData = filteredNotifications.slice(start, end);
+    const start=(currentPage-1)*ITEMS_PER_PAGE;
+
+    const end=start+ITEMS_PER_PAGE;
+
+    const pageData=
+
+    filteredNotifications.slice(
+
+        start,
+
+        end
+
+    );
 
     loadTable(pageData);
 
@@ -147,32 +265,50 @@ function renderPage(){
 
 }
 
-
-
 // ============================================
 // LOAD TABLE
 // ============================================
 
 function loadTable(data){
 
-    const tbody =
-        document.getElementById("notificationBody");
+    const tbody=
 
-    tbody.innerHTML = "";
+    document.getElementById(
+
+        "notificationBody"
+
+    );
+
+    tbody.innerHTML="";
+
+    tbody.classList.remove(
+
+        "page-loaded"
+
+    );
+
+    void tbody.offsetWidth;
+
+    tbody.classList.add(
+
+        "page-loaded"
+
+    );
 
     data.forEach(notification=>{
 
-        // -------------------------
-        // STATUS
-        // -------------------------
+        let status="";
 
-        let status = "";
+        switch(
 
-        switch(notification.status.toUpperCase()){
+            notification.status.toUpperCase()
+
+        ){
 
             case "NEW":
 
-                status =
+                status=
+
                 `<span class="badge-new">
 
                     NEW
@@ -183,7 +319,8 @@ function loadTable(data){
 
             case "ACTIVE":
 
-                status =
+                status=
+
                 `<span class="badge-active">
 
                     ACTIVE
@@ -194,7 +331,8 @@ function loadTable(data){
 
             case "DEACTIVATED":
 
-                status =
+                status=
+
                 `<span class="badge-deactivated">
 
                     DEACTIVATED
@@ -205,7 +343,8 @@ function loadTable(data){
 
             default:
 
-                status =
+                status=
+
                 `<span class="badge-active">
 
                     ACTIVE
@@ -214,17 +353,11 @@ function loadTable(data){
 
         }
 
-
-
-        // -------------------------
-        // LINKS
-        // -------------------------
-
-        let linksHTML = "";
+        let linksHTML="";
 
         notification.links.forEach(link=>{
 
-            linksHTML +=
+            linksHTML+=
 
             `<a
 
@@ -242,51 +375,49 @@ function loadTable(data){
 
         });
 
+        tbody.innerHTML+=`
 
+<tr>
 
-        // -------------------------
-        // ROW
-        // -------------------------
+<td>
 
-        tbody.innerHTML +=
+${formatDate(notification.date)}
 
-        `<tr>
+</td>
 
-            <td>
+<td>
 
-                ${formatDate(notification.date)}
+${notification.category}
 
-            </td>
+</td>
 
-            <td>
+<td class="notification-title">
 
-                ${notification.category}
+${notification.title}
 
-            </td>
+${notification.pinned
 
-            <td class="notification-title">
+? '<span class="pin-badge">📌 Pinned</span>'
 
-                ${notification.title}
+: ''}
 
-                ${notification.pinned
-                    ? '<span class="pin-badge">📌 Pinned</span>'
-                    : ''}
+</td>
 
-            </td>
+<td>
 
-            <td>
+${status}
 
-                ${status}
+</td>
 
-            </td>
+<td class="action-links">
 
-            <td class="action-links">
+${linksHTML}
 
-                ${linksHTML}
+</td>
 
-            </td>
+</tr>
 
-        </tr>`;
+`;
 
     });
 
@@ -294,37 +425,49 @@ function loadTable(data){
 
 }
 
-
-
 // ============================================
-// UPDATE COUNTER
+// COUNTER
 // ============================================
 
 function updateCounter(){
 
-    const total =
-        filteredNotifications.length;
+    const total=
 
-    const start =
-        total === 0
-        ? 0
-        : ((currentPage-1)*ITEMS_PER_PAGE)+1;
+    filteredNotifications.length;
 
-    const end =
-        Math.min(
-            currentPage*ITEMS_PER_PAGE,
-            total
-        );
+    const start=
+
+    total===0
+
+    ?0
+
+    :((currentPage-1)
+
+    *ITEMS_PER_PAGE)+1;
+
+    const end=
+
+    Math.min(
+
+        currentPage
+
+        *ITEMS_PER_PAGE,
+
+        total
+
+    );
 
     document
-    .getElementById("count")
-    .innerHTML =
 
-    `Showing ${start} to ${end} of ${total} notifications`;
+    .getElementById("count")
+
+    .innerHTML=
+
+    `Showing ${start} to ${end}
+
+    of ${total} notifications`;
 
 }
-
-
 
 // ============================================
 // FORMAT DATE
@@ -332,8 +475,9 @@ function updateCounter(){
 
 function formatDate(date){
 
-    const d =
-        new Date(date);
+    const d=
+
+    new Date(date);
 
     return d.toLocaleDateString(
 
@@ -353,125 +497,420 @@ function formatDate(date){
 
 }
 // ============================================
-// LIVE SEARCH
+// SEARCH SUGGESTIONS
 // ============================================
 
 const searchInput =
 document.getElementById("searchInput");
 
-if(searchInput){
+const suggestions =
+document.getElementById("suggestions");
 
-    searchInput.addEventListener("input",filterNotifications);
+let selectedSuggestion = -1;
+
+function showSuggestions(keyword){
+
+    if(!suggestions) return;
+
+    suggestions.innerHTML="";
+
+    selectedSuggestion=-1;
+
+    if(keyword.length===0){
+
+        suggestions.style.display="none";
+
+        return;
+
+    }
+
+    const matches=
+
+    notifications.filter(notification=>
+
+        notification.title
+
+        .toLowerCase()
+
+        .includes(
+
+            keyword.toLowerCase()
+
+        )
+
+    )
+
+    .slice(0,8);
+
+    if(matches.length===0){
+
+        suggestions.style.display="none";
+
+        return;
+
+    }
+
+    matches.forEach(notification=>{
+
+        const item=
+
+        document.createElement("div");
+
+        item.className="suggestion";
+
+        item.textContent=
+
+        notification.title;
+
+        item.onclick=()=>{
+
+            searchInput.value=
+
+            notification.title;
+
+            suggestions.style.display="none";
+
+            filterNotifications();
+
+        };
+
+        suggestions.appendChild(item);
+
+    });
+
+    suggestions.style.display="block";
 
 }
 
-document
-.getElementById("categoryFilter")
-.addEventListener("change",filterNotifications);
+// ============================================
+// LIVE SEARCH
+// ============================================
 
-document
-.getElementById("yearFilter")
-.addEventListener("change",filterNotifications);
+if(searchInput){
 
+    searchInput.addEventListener(
 
+        "input",
+
+        ()=>{
+
+            showSuggestions(
+
+                searchInput.value.trim()
+
+            );
+
+            filterNotifications();
+
+        }
+
+    );
+
+    searchInput.addEventListener(
+
+        "keydown",
+
+        e=>{
+
+            const items=
+
+            document.querySelectorAll(
+
+                ".suggestion"
+
+            );
+
+            if(items.length===0)
+
+                return;
+
+            if(e.key==="ArrowDown"){
+
+                e.preventDefault();
+
+                selectedSuggestion++;
+
+                if(
+
+                    selectedSuggestion
+
+                    >=items.length
+
+                ){
+
+                    selectedSuggestion=0;
+
+                }
+
+            }
+
+            if(e.key==="ArrowUp"){
+
+                e.preventDefault();
+
+                selectedSuggestion--;
+
+                if(
+
+                    selectedSuggestion<0
+
+                ){
+
+                    selectedSuggestion=
+
+                    items.length-1;
+
+                }
+
+            }
+
+            items.forEach(item=>
+
+                item.classList.remove(
+
+                    "active"
+
+                )
+
+            );
+
+            if(
+
+                selectedSuggestion>=0
+
+            ){
+
+                items[
+
+                    selectedSuggestion
+
+                ]
+
+                .classList.add(
+
+                    "active"
+
+                );
+
+            }
+
+            if(
+
+                e.key==="Enter"
+
+                &&
+
+                selectedSuggestion>=0
+
+            ){
+
+                e.preventDefault();
+
+                items[
+
+                    selectedSuggestion
+
+                ].click();
+
+            }
+
+        }
+
+    );
+
+}
+
+document.addEventListener(
+
+    "click",
+
+    e=>{
+
+        if(
+
+            suggestions
+
+            &&
+
+            !e.target.closest(
+
+                ".search-box"
+
+            )
+
+        ){
+
+            suggestions.style.display="none";
+
+        }
+
+    }
+
+);
 
 // ============================================
 // FILTER
 // ============================================
 
+document
+
+.getElementById(
+
+    "categoryFilter"
+
+)
+
+.addEventListener(
+
+    "change",
+
+    filterNotifications
+
+);
+
+document
+
+.getElementById(
+
+    "yearFilter"
+
+)
+
+.addEventListener(
+
+    "change",
+
+    filterNotifications
+
+);
+
 function filterNotifications(){
 
-    currentPage = 1;
+    currentPage=1;
 
-    const keyword =
-    document
-    .getElementById("searchInput")
-    .value
+    const keyword=
+
+    searchInput.value
+
     .toLowerCase()
+
     .trim();
 
-    const category =
+    const category=
+
     document
-    .getElementById("categoryFilter")
+
+    .getElementById(
+
+        "categoryFilter"
+
+    )
+
     .value;
 
-    const year =
+    const year=
+
     document
-    .getElementById("yearFilter")
+
+    .getElementById(
+
+        "yearFilter"
+
+    )
+
     .value;
 
-    filteredNotifications =
+    filteredNotifications=
 
-    notifications.filter(notification=>{
+    notifications.filter(
 
-        const titleMatch =
+        notification=>{
+
+            const titleMatch=
 
             notification.title
+
             .toLowerCase()
+
             .includes(keyword);
 
-        const categoryMatch =
+            const categoryMatch=
 
             category==="All"
 
             ||
 
-            notification.category===category;
+            notification.category
 
-        const yearMatch =
+            ===category;
+
+            const yearMatch=
 
             year==="All"
 
             ||
 
-            notification.year===year;
+            notification.year
 
-        return (
+            ===year;
 
-            titleMatch
+            return(
 
-            &&
+                titleMatch
 
-            categoryMatch
+                &&
 
-            &&
+                categoryMatch
 
-            yearMatch
+                &&
 
-        );
+                yearMatch
 
-    });
+            );
+
+        }
+
+    );
 
     renderPage();
 
 }
-
-
-
 // ============================================
 // PAGINATION
 // ============================================
 
 function renderPagination(){
 
-    const pagination =
-    document.getElementById("pagination");
+    const pagination=
+
+    document.getElementById(
+
+        "pagination"
+
+    );
 
     pagination.innerHTML="";
 
-    const totalPages =
+    const totalPages=
+
     Math.ceil(
+
         filteredNotifications.length
-        / ITEMS_PER_PAGE
+
+        /ITEMS_PER_PAGE
+
     );
 
-    if(totalPages<=1) return;
+    if(totalPages<=1){
 
+        return;
 
+    }
 
-    // Previous
+    // Previous Button
 
-    const previous =
+    const previous=
+
     document.createElement("button");
 
     previous.textContent="Previous";
@@ -484,6 +923,8 @@ function renderPagination(){
 
             currentPage--;
 
+            animateTable();
+
             renderPage();
 
         }
@@ -492,9 +933,7 @@ function renderPagination(){
 
     pagination.appendChild(previous);
 
-
-
-    // Page Numbers
+    // Page Buttons
 
     for(
 
@@ -506,7 +945,8 @@ function renderPagination(){
 
     ){
 
-        const button =
+        const button=
+
         document.createElement("button");
 
         button.textContent=i;
@@ -521,6 +961,8 @@ function renderPagination(){
 
             currentPage=i;
 
+            animateTable();
+
             renderPage();
 
         };
@@ -529,11 +971,10 @@ function renderPagination(){
 
     }
 
+    // Next Button
 
+    const next=
 
-    // Next
-
-    const next =
     document.createElement("button");
 
     next.textContent="Next";
@@ -546,6 +987,8 @@ function renderPagination(){
 
             currentPage++;
 
+            animateTable();
+
             renderPage();
 
         }
@@ -556,35 +999,255 @@ function renderPagination(){
 
 }
 
-
-
 // ============================================
-// RESET FILTERS
+// RESET
 // ============================================
 
 function resetFilters(){
 
-    document
-    .getElementById("searchInput")
-    .value="";
+    searchInput.value="";
 
     document
-    .getElementById("categoryFilter")
+
+    .getElementById(
+
+        "categoryFilter"
+
+    )
+
     .value="All";
 
     document
-    .getElementById("yearFilter")
+
+    .getElementById(
+
+        "yearFilter"
+
+    )
+
     .value="All";
 
-    filteredNotifications=[...notifications];
+    if(suggestions){
+
+        suggestions.innerHTML="";
+
+        suggestions.style.display="none";
+
+    }
+
+    filteredNotifications=[
+
+        ...notifications
+
+    ];
 
     currentPage=1;
+
+    animateTable();
 
     renderPage();
 
 }
 
+// ============================================
+// TABLE ANIMATION
+// ============================================
 
+function animateTable(){
+
+    const table=
+
+    document.querySelector(
+
+        "tbody"
+
+    );
+
+    if(!table) return;
+
+    table.style.opacity="0";
+
+    table.style.transform=
+
+    "translateY(10px)";
+
+    setTimeout(()=>{
+
+        table.style.opacity="1";
+
+        table.style.transform=
+
+        "translateY(0)";
+
+    },120);
+
+}
+
+// ============================================
+// INITIALIZE
+// ============================================
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    ()=>{
+
+        loadTheme();
+
+    }
+
+);
+// ============================================
+// VERSION 4.0
+// FINAL IMPROVEMENTS
+// ============================================
+
+// Close suggestions with Escape key
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape"){
+
+        if(suggestions){
+
+            suggestions.style.display="none";
+
+        }
+
+    }
+
+});
+
+// Prevent duplicate page animation
+
+function removePageAnimation(){
+
+    document.body.classList.remove("page-loaded");
+
+    void document.body.offsetWidth;
+
+    document.body.classList.add("page-loaded");
+
+}
+
+// Smooth page refresh after filtering
+
+const oldRenderPage = renderPage;
+
+renderPage = function(){
+
+    removePageAnimation();
+
+    oldRenderPage();
+
+};
+
+// ============================================
+// IMPROVED SEARCH EXPERIENCE
+// ============================================
+
+if(searchInput){
+
+    searchInput.setAttribute(
+
+        "autocomplete",
+
+        "off"
+
+    );
+
+    searchInput.setAttribute(
+
+        "spellcheck",
+
+        "false"
+
+    );
+
+}
+
+// ============================================
+// ACCESSIBILITY
+// ============================================
+
+document.querySelectorAll(
+
+    "button"
+
+).forEach(button=>{
+
+    button.setAttribute(
+
+        "tabindex",
+
+        "0"
+
+    );
+
+});
+
+// ============================================
+// PRELOAD LINKS
+// ============================================
+
+function preloadLinks(){
+
+    notifications.forEach(notification=>{
+
+        if(!notification.links) return;
+
+        notification.links.forEach(link=>{
+
+            const preload =
+
+            document.createElement("link");
+
+            preload.rel="prefetch";
+
+            preload.href=link.url;
+
+            document.head.appendChild(preload);
+
+        });
+
+    });
+
+}
+
+// ============================================
+// AFTER JSON LOAD
+// ============================================
+
+const originalRender = renderPage;
+
+renderPage = function(){
+
+    originalRender();
+
+    preloadLinks();
+
+};
+
+// ============================================
+// VERSION
+// ============================================
+
+console.log(
+
+    "%cPolytechnic Helpdesk Notification Portal",
+
+    "color:#0F4C81;font-size:16px;font-weight:bold"
+
+);
+
+console.log(
+
+    "%cVersion 4.0 Loaded Successfully",
+
+    "color:#198754;font-size:13px"
+
+);
 
 // ============================================
 // END
