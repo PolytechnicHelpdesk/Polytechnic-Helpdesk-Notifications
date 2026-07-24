@@ -716,7 +716,7 @@ ACTION BUTTONS
 
     color:#0F4C81;
 
-    border:1px solid #D9DEE6;
+    border:none;
 
     border-radius:8px;
 
@@ -738,11 +738,7 @@ ACTION BUTTONS
 
     color:#FFFFFF;
 
-    border-color:#0F4C81;
-
     transform:translateY(-2px);
-
-    box-shadow:0 6px 16px rgba(0,0,0,.20);
 
 }
 
@@ -1738,7 +1734,7 @@ body.dark .view-link{
 
     color:#F8FAFC;
 
-    border:1px solid #475569;
+    border:none;
 
 }
 
@@ -1747,8 +1743,6 @@ body.dark .view-link:hover{
     background:#2563EB;
 
     color:#FFFFFF;
-
-    border-color:#2563EB;
 
 }
 
