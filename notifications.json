@@ -146,6 +146,21 @@
     "id": 10,
     "date": "2026-07-01",
     "year": "2026",
+    "category": "Notice",
+    "title": "SCTE Releases 4th and 6th Semester Results",
+    "status": "ACTIVE",
+    "pinned": false,
+    "links": [
+      {
+        "name": "View",
+        "url": "https://drive.google.com/file/d/1zDkNW-3gMn0vOlzHRHLNhkZ9uCX_UGTF/view?usp=sharing"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "date": "2026-07-03",
+    "year": "2026",
     "category": "Result",
     "title": "JLEE & JMEE 2026 Result/Scorecard Now Available To Download",
     "status": "ACTIVE",
@@ -158,7 +173,7 @@
     ]
   },
   {
-    "id": 11,
+    "id": 12,
     "date": "2026-07-03",
     "year": "2026",
     "category": "PYQs",
@@ -173,7 +188,7 @@
     ]
   },
   {
-    "id": 12,
+    "id": 13,
     "date": "2026-07-11",
     "year": "2026",
     "category": "Notice",
@@ -188,7 +203,7 @@
     ]
   },
   {
-    "id": 13,
+    "id": 14,
     "date": "2026-07-15",
     "year": "2026",
     "category": "Notice",
@@ -203,7 +218,7 @@
     ]
   },
   {
-    "id": 14,
+    "id": 15,
     "date": "2026-07-17",
     "year": "2026",
     "category": "Notice",
@@ -218,7 +233,7 @@
     ]
   },
   {
-    "id": 15,
+    "id": 16,
     "date": "2026-07-21",
     "year": "2026",
     "category": "Study Materials",
@@ -233,7 +248,7 @@
     ]
   },
   {
-    "id": 16,
+    "id": 17,
     "date": "2026-07-22",
     "year": "2026",
     "category": "Notice",
