@@ -1716,6 +1716,21 @@ body.dark .suggestion.active{
     background:#334155;
 
 }
+body.dark .search-button button{
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+
+}
+
+body.dark .search-button button:hover{
+
+    background:#1D4ED8;
+
+    color:#FFFFFF;
+
+}
 
 body.dark .view-link{
 
