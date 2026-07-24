@@ -1,6 +1,6 @@
 /*==================================================
     Polytechnic Helpdesk Notification Portal
-    Version 4.0
+    Version 4.1
 ==================================================*/
 
 /*==================================================
@@ -8,10 +8,15 @@ GLOBAL
 ==================================================*/
 
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
+
     font-family:"Segoe UI",Arial,sans-serif;
+
 }
 
 /*==================================================
@@ -21,39 +26,47 @@ THEME VARIABLES
 :root{
 
     --primary:#0F4C81;
-    --primary-dark:#0b3d69;
+    --primary-dark:#0B3D69;
 
-    --background:#f4f7fb;
-    --card:#ffffff;
+    --background:#F4F7FB;
 
-    --text:#222;
-    --text-light:#666;
+    --card:#FFFFFF;
 
-    --border:#d9dee6;
+    --table-header:#EEF4FB;
 
-    --table-header:#eef4fb;
+    --text:#222222;
 
-    --hover:#f2f8ff;
+    --text-light:#666666;
 
-    --shadow:0 2px 10px rgba(0,0,0,.10);
+    --border:#D9DEE6;
+
+    --hover:#F2F8FF;
+
+    --shadow:0 2px 12px rgba(0,0,0,.08);
 
 }
 
+/*==================================================
+DARK MODE
+==================================================*/
+
 body.dark{
 
-    --background:#111827;
+    --background:#0F172A;
 
-    --card:#1f2937;
-
-    --text:#f5f5f5;
-
-    --text-light:#cbd5e1;
-
-    --border:#334155;
+    --card:#1E293B;
 
     --table-header:#263445;
 
+    --text:#F8FAFC;
+
+    --text-light:#CBD5E1;
+
+    --border:#475569;
+
     --hover:#334155;
+
+    --shadow:0 4px 18px rgba(0,0,0,.35);
 
 }
 
@@ -69,7 +82,11 @@ body{
 
     line-height:1.5;
 
-    transition:.35s;
+    transition:
+
+        background .35s,
+
+        color .35s;
 
 }
 
@@ -87,7 +104,7 @@ HEADER
 
     padding:25px;
 
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
+    box-shadow:0 2px 12px rgba(0,0,0,.18);
 
 }
 
@@ -137,7 +154,7 @@ TOP BAR
 
     max-width:1350px;
 
-    margin:18px auto 0;
+    margin:12px auto;
 
     padding:0 18px;
 
@@ -147,31 +164,39 @@ TOP BAR
 
 }
 
+/*==================================================
+DARK MODE BUTTON
+==================================================*/
+
 #themeToggle{
 
     border:none;
 
-    background:var(--primary);
+    background:linear-gradient(135deg,#111827,#000000);
 
-    color:#fff;
+    color:#FFD54F;
 
-    padding:10px 18px;
+    padding:10px 22px;
 
-    border-radius:8px;
+    border-radius:10px;
 
     cursor:pointer;
 
     font-size:13px;
 
-    font-weight:600;
+    font-weight:700;
 
-    transition:.25s;
+    transition:.3s;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.18);
 
 }
 
 #themeToggle:hover{
 
-    background:var(--primary-dark);
+    background:linear-gradient(135deg,#000,#111827);
+
+    color:#fff;
 
     transform:translateY(-2px);
 
@@ -205,11 +230,11 @@ SEARCH PANEL
 
     background:var(--card);
 
-    padding:20px;
-
     border:1px solid var(--border);
 
     border-radius:10px;
+
+    padding:20px;
 
     margin-bottom:22px;
 
@@ -241,6 +266,8 @@ SEARCH PANEL
 
 .filter-item select{
 
+    width:100%;
+
     height:48px;
 
     border:1px solid var(--border);
@@ -249,13 +276,13 @@ SEARCH PANEL
 
     padding:0 14px;
 
-    font-size:14px;
-
     background:var(--card);
 
     color:var(--text);
 
-    transition:.2s;
+    font-size:14px;
+
+    transition:.25s;
 
 }
 
@@ -268,6 +295,76 @@ SEARCH PANEL
     border-color:var(--primary);
 
     box-shadow:0 0 0 3px rgba(15,76,129,.15);
+
+}
+
+/*==================================================
+SEARCH BOX
+==================================================*/
+
+.search-box{
+
+    position:relative;
+
+    width:100%;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+}
+
+/*==================================================
+SEARCH SUGGESTIONS
+==================================================*/
+
+#suggestions{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    top:100%;
+
+    margin-top:5px;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:8px;
+
+    display:none;
+
+    z-index:999;
+
+    overflow:hidden;
+
+    box-shadow:0 8px 18px rgba(0,0,0,.15);
+
+}
+
+.suggestion{
+
+    padding:12px 15px;
+
+    cursor:pointer;
+
+    font-size:13px;
+
+    transition:.15s;
+
+}
+
+.suggestion:hover,
+
+.suggestion.active{
+
+    background:var(--hover);
 
 }
 
@@ -299,6 +396,8 @@ SEARCH BUTTON
 
     font-size:14px;
 
+    font-weight:600;
+
     cursor:pointer;
 
     transition:.25s;
@@ -311,84 +410,6 @@ SEARCH BUTTON
 
 }
 
-/*==================================================
-SEARCH SUGGESTIONS
-==================================================*/
-
-.search-box{
-
-    position:relative;
-
-    width:100%;
-
-}
-.search-box input{
-
-    width:100%;
-
-    height:48px;
-
-    border:1px solid var(--border);
-
-    border-radius:8px;
-
-    padding:0 14px;
-
-    font-size:14px;
-
-    background:var(--card);
-
-    color:var(--text);
-
-    transition:.2s;
-
-}
-
-#suggestions{
-
-    position:absolute;
-
-    top:100%;
-
-    left:0;
-
-    right:0;
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:8px;
-
-    display:none;
-
-    margin-top:5px;
-
-    z-index:999;
-
-    overflow:hidden;
-
-    box-shadow:0 6px 18px rgba(0,0,0,.15);
-
-}
-
-.suggestion{
-
-    padding:12px 15px;
-
-    cursor:pointer;
-
-    font-size:13px;
-
-    transition:.15s;
-
-}
-
-.suggestion:hover{
-
-    background:var(--hover);
-
-}
 /*==================================================
 TABLE
 ==================================================*/
@@ -405,7 +426,7 @@ TABLE
 
     box-shadow:var(--shadow);
 
-    animation:fadeIn .4s ease;
+    transition:.35s;
 
 }
 
@@ -424,6 +445,12 @@ TABLE
     font-size:22px;
 
     color:var(--primary);
+
+}
+
+body.dark .table-title h2{
+
+    color:#60A5FA;
 
 }
 
@@ -467,6 +494,16 @@ th{
 
 }
 
+body.dark th{
+
+    background:#263445;
+
+    color:#93C5FD;
+
+    border-color:#475569;
+
+}
+
 td{
 
     font-size:13px;
@@ -476,6 +513,14 @@ td{
     border:1px solid var(--border);
 
     vertical-align:top;
+
+    color:var(--text);
+
+}
+
+body.dark td{
+
+    border-color:#475569;
 
 }
 
@@ -489,7 +534,13 @@ tbody tr{
 
 tbody tr:nth-child(even){
 
-    background:rgba(0,0,0,.015);
+    background:rgba(0,0,0,.02);
+
+}
+
+body.dark tbody tr:nth-child(even){
+
+    background:#233246;
 
 }
 
@@ -505,9 +556,9 @@ NOTIFICATION TITLE
 
 .notification-title{
 
-    font-weight:500;
-
     line-height:1.55;
+
+    font-weight:600;
 
     color:var(--text);
 
@@ -525,33 +576,33 @@ CATEGORY BADGES
 
     border-radius:20px;
 
+    color:#fff;
+
     font-size:11px;
 
     font-weight:600;
-
-    color:#fff;
 
 }
 
 .category-notice{background:#0F4C81;}
 
-.category-announcement{background:#d63384;}
+.category-announcement{background:#D63384;}
 
-.category-pyqs{background:#fd7e14;}
+.category-pyqs{background:#FD7E14;}
 
 .category-result{background:#198754;}
 
-.category-newsletter{background:#6f42c1;}
+.category-newsletter{background:#6F42C1;}
 
 .category-routine{background:#795548;}
 
 .category-material{background:#009688;}
 
-.category-answerkey{background:#e83e8c;}
+.category-answerkey{background:#E83E8C;}
 
-.category-calendar{background:#20c997;}
+.category-calendar{background:#20C997;}
 
-.category-iscodes{background:#6610f2;}
+.category-iscodes{background:#6610F2;}
 
 /*==================================================
 PIN BADGE
@@ -563,13 +614,11 @@ PIN BADGE
 
     margin-left:8px;
 
-    margin-top:4px;
-
     padding:3px 8px;
 
-    border-radius:15px;
+    border-radius:20px;
 
-    background:#ffc107;
+    background:#FFC107;
 
     color:#222;
 
@@ -580,11 +629,13 @@ PIN BADGE
 }
 
 /*==================================================
-STATUS BADGES
+STATUS
 ==================================================*/
 
 .badge-new,
+
 .badge-active,
+
 .badge-deactivated{
 
     display:inline-block;
@@ -603,7 +654,7 @@ STATUS BADGES
 
 .badge-new{
 
-    background:#dc3545;
+    background:#DC3545;
 
 }
 
@@ -615,12 +666,12 @@ STATUS BADGES
 
 .badge-deactivated{
 
-    background:#6c757d;
+    background:#6C757D;
 
 }
 
 /*==================================================
-ACTION LINKS
+ACTION BUTTONS
 ==================================================*/
 
 .action-links{
@@ -649,7 +700,7 @@ ACTION LINKS
 
     max-width:220px;
 
-    height:36px;
+    height:40px;
 
     padding:0 18px;
 
@@ -657,9 +708,9 @@ ACTION LINKS
 
     color:#fff;
 
-    text-decoration:none;
+    border-radius:8px;
 
-    border-radius:7px;
+    text-decoration:none;
 
     font-size:12px;
 
@@ -669,7 +720,7 @@ ACTION LINKS
 
     transition:.25s;
 
-    box-shadow:0 2px 6px rgba(0,0,0,.10);
+    box-shadow:0 2px 6px rgba(0,0,0,.12);
 
 }
 
@@ -679,7 +730,7 @@ ACTION LINKS
 
     transform:translateY(-2px);
 
-    box-shadow:0 6px 16px rgba(0,0,0,.18);
+    box-shadow:0 6px 16px rgba(0,0,0,.20);
 
 }
 
@@ -688,6 +739,7 @@ ACTION LINKS
     content:"";
 
 }
+
 /*==================================================
 FOOTER
 ==================================================*/
@@ -704,11 +756,35 @@ FOOTER
 
     padding:16px 20px;
 
+    background:var(--card);
+
     border-top:1px solid var(--border);
+
+    transition:.3s;
+
+}
+
+body.dark .footer{
+
+    background:var(--card);
+
+    border-top:1px solid var(--border);
+
+}
+
+#count{
+
+    color:var(--text);
 
     font-size:13px;
 
-    background:var(--card);
+    font-weight:500;
+
+}
+
+body.dark #count{
+
+    color:#F8FAFC;
 
 }
 
@@ -716,11 +792,19 @@ FOOTER
 
     text-align:center;
 
-    color:var(--text-light);
+    color:#666;
 
     font-size:13px;
 
     padding:18px;
+
+    transition:.3s;
+
+}
+
+body.dark .site-footer{
+
+    color:#CBD5E1;
 
 }
 
@@ -732,25 +816,29 @@ PAGINATION
 
     display:flex;
 
-    gap:6px;
-
     flex-wrap:wrap;
+
+    gap:8px;
 
 }
 
 #pagination button{
 
-    min-width:38px;
+    min-width:40px;
 
-    height:38px;
+    height:40px;
 
     border:none;
 
-    border-radius:6px;
+    border-radius:8px;
 
-    background:var(--table-header);
+    background:#EEF4FB;
 
-    color:var(--primary);
+    color:#0F4C81;
+
+    font-size:13px;
+
+    font-weight:600;
 
     cursor:pointer;
 
@@ -760,7 +848,7 @@ PAGINATION
 
 #pagination button:hover{
 
-    background:var(--primary);
+    background:#0F4C81;
 
     color:#fff;
 
@@ -768,9 +856,105 @@ PAGINATION
 
 #pagination button.active{
 
-    background:var(--primary);
+    background:#0F4C81;
 
     color:#fff;
+
+}
+
+#pagination button:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}
+
+/*==================================================
+DARK MODE PAGINATION
+==================================================*/
+
+body.dark #pagination button{
+
+    background:#334155;
+
+    color:#F8FAFC;
+
+    border:1px solid #475569;
+
+}
+
+body.dark #pagination button:hover{
+
+    background:#2563EB;
+
+    color:#fff;
+
+}
+
+body.dark #pagination button.active{
+
+    background:#2563EB;
+
+    color:#fff;
+
+}
+
+body.dark #pagination button:disabled{
+
+    background:#1E293B;
+
+    color:#64748B;
+
+}
+
+/*==================================================
+SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+    height:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#E5E7EB;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0F4C81;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#0B3D69;
+
+}
+
+body.dark::-webkit-scrollbar-track{
+
+    background:#1E293B;
+
+}
+
+body.dark::-webkit-scrollbar-thumb{
+
+    background:#60A5FA;
+
+}
+
+body.dark::-webkit-scrollbar-thumb:hover{
+
+    background:#3B82F6;
 
 }
 
@@ -814,35 +998,47 @@ ANIMATIONS
 
 }
 
-.page-loaded{
+tbody tr{
+
+    animation:fadeUp .35s ease;
+
+}
+
+.table-section{
 
     animation:fadeIn .4s ease;
 
 }
 
 /*==================================================
-SCROLLBAR
+LOADING EFFECT
 ==================================================*/
 
-::-webkit-scrollbar{
+.view-link,
 
-    width:10px;
+#pagination button,
 
-    height:10px;
+.search-button button,
+
+#themeToggle{
+
+    transition:
+
+        background .25s,
+
+        color .25s,
+
+        transform .25s,
+
+        box-shadow .25s;
 
 }
 
-::-webkit-scrollbar-thumb{
+button:active,
 
-    background:var(--primary);
+.view-link:active{
 
-    border-radius:20px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:var(--table-header);
+    transform:scale(.97);
 
 }
 
@@ -851,6 +1047,10 @@ MOBILE VIEW
 ==================================================*/
 
 @media (max-width:768px){
+
+/*==============================
+HEADER
+==============================*/
 
 .header{
 
@@ -876,11 +1076,15 @@ MOBILE VIEW
 
 }
 
+/*==============================
+TOP BAR
+==============================*/
+
 .top-bar{
 
     justify-content:center;
 
-    margin-top:15px;
+    padding:0 12px;
 
 }
 
@@ -892,11 +1096,19 @@ MOBILE VIEW
 
 }
 
+/*==============================
+CONTAINER
+==============================*/
+
 .container{
 
     padding:12px;
 
 }
+
+/*==============================
+SEARCH PANEL
+==============================*/
 
 .filters{
 
@@ -904,7 +1116,13 @@ MOBILE VIEW
 
     gap:12px;
 
-    padding:15px;
+    padding:16px;
+
+}
+
+.filter-item{
+
+    width:100%;
 
 }
 
@@ -914,28 +1132,43 @@ MOBILE VIEW
 
 }
 
-.filter-item input,
-
-.filter-item select,
-
-.search-button button{
-
-    height:42px;
-
-    font-size:13px;
-
-}
 .search-box{
 
     width:100%;
 
 }
 
-.search-box input{
+.search-box input,
+
+.filter-item input,
+
+.filter-item select,
+
+.search-button button{
+
+    width:100%;
+
+    height:44px;
+
+    font-size:13px;
+
+}
+
+.search-button{
 
     width:100%;
 
 }
+
+.search-button button{
+
+    width:100%;
+
+}
+
+/*==============================
+TABLE → CARDS
+==============================*/
 
 table,
 
@@ -965,21 +1198,29 @@ thead{
 
 }
 
+/*==============================
+CARD
+==============================*/
+
 tbody tr{
 
     background:var(--card);
 
     border:1px solid var(--border);
 
-    border-radius:12px;
+    border-radius:14px;
 
-    padding:14px;
+    padding:16px;
 
-    margin-bottom:14px;
+    margin-bottom:16px;
 
-    box-shadow:0 2px 8px rgba(0,0,0,.06);
+    box-shadow:0 3px 10px rgba(0,0,0,.06);
 
 }
+
+/*==============================
+CELL
+==============================*/
 
 td{
 
@@ -987,9 +1228,13 @@ td{
 
     padding:0;
 
-    margin-bottom:8px;
+    margin-bottom:10px;
 
 }
+
+/*==============================
+DATE
+==============================*/
 
 td:nth-child(1){
 
@@ -997,7 +1242,13 @@ td:nth-child(1){
 
     font-size:11px;
 
+    font-weight:500;
+
 }
+
+/*==============================
+CATEGORY
+==============================*/
 
 td:nth-child(2){
 
@@ -1005,23 +1256,39 @@ td:nth-child(2){
 
 }
 
+/*==============================
+TITLE
+==============================*/
+
 .notification-title{
 
     font-size:14px;
 
-    line-height:1.45;
-
     font-weight:600;
+
+    line-height:1.5;
+
+    margin:8px 0;
 
 }
 
+/*==============================
+PIN
+==============================*/
+
 .pin-badge{
 
-    margin-top:6px;
+    display:inline-block;
+
+    margin-top:8px;
 
     margin-left:0;
 
 }
+
+/*==============================
+STATUS
+==============================*/
 
 .badge-new,
 
@@ -1029,17 +1296,23 @@ td:nth-child(2){
 
 .badge-deactivated{
 
-    font-size:9px;
+    font-size:10px;
 
-    padding:4px 8px;
+    padding:5px 9px;
 
 }
 
+/*==============================
+ACTION BUTTONS
+==============================*/
+
 .action-links{
 
-    margin-top:12px;
+    margin-top:14px;
 
     min-width:auto;
+
+    align-items:stretch;
 
 }
 
@@ -1049,21 +1322,41 @@ td:nth-child(2){
 
     max-width:none;
 
-    height:40px;
+    min-width:0;
+
+    height:42px;
+
+    border-radius:8px;
 
     font-size:12px;
 
 }
 
+/*==============================
+FOOTER
+==============================*/
+
 .footer{
 
     flex-direction:column;
 
-    gap:10px;
+    align-items:center;
+
+    gap:12px;
 
     text-align:center;
 
 }
+
+#count{
+
+    font-size:12px;
+
+}
+
+/*==============================
+PAGINATION
+==============================*/
 
 #pagination{
 
@@ -1073,9 +1366,9 @@ td:nth-child(2){
 
 #pagination button{
 
-    min-width:36px;
+    min-width:38px;
 
-    height:36px;
+    height:38px;
 
     font-size:12px;
 
@@ -1084,10 +1377,24 @@ td:nth-child(2){
 }
 
 /*==================================================
-SMALL DEVICES
+SMALL MOBILE DEVICES
 ==================================================*/
 
 @media (max-width:480px){
+
+/* Header */
+
+.header{
+
+    padding:16px;
+
+}
+
+.logo{
+
+    width:56px;
+
+}
 
 .header h1{
 
@@ -1101,23 +1408,79 @@ SMALL DEVICES
 
 }
 
-.logo{
+/* Top Bar */
 
-    width:58px;
+.top-bar{
 
-}
-
-.notification-title{
-
-    font-size:13px;
+    padding:0 10px;
 
 }
 
-.view-link{
+#themeToggle{
+
+    width:100%;
+
+    max-width:210px;
+
+    height:40px;
+
+    font-size:12px;
+
+    border-radius:8px;
+
+}
+
+/* Container */
+
+.container{
+
+    padding:10px;
+
+}
+
+/* Search Panel */
+
+.filters{
+
+    padding:14px;
+
+    gap:10px;
+
+}
+
+.filter-item label{
 
     font-size:11px;
 
 }
+
+.search-box input,
+
+.filter-item input,
+
+.filter-item select,
+
+.search-button button{
+
+    height:42px;
+
+    font-size:12px;
+
+}
+
+/* Notification Card */
+
+tbody tr{
+
+    padding:14px;
+
+    border-radius:12px;
+
+    margin-bottom:14px;
+
+}
+
+/* Date */
 
 td:nth-child(1){
 
@@ -1125,11 +1488,35 @@ td:nth-child(1){
 
 }
 
+/* Category */
+
 .category-badge{
 
     font-size:10px;
 
+    padding:4px 9px;
+
 }
+
+/* Notification */
+
+.notification-title{
+
+    font-size:13px;
+
+    line-height:1.45;
+
+}
+
+/* Pin */
+
+.pin-badge{
+
+    font-size:9px;
+
+}
+
+/* Status */
 
 .badge-new,
 
@@ -1139,6 +1526,216 @@ td:nth-child(1){
 
     font-size:8px;
 
+    padding:4px 8px;
+
+}
+
+/* Buttons */
+
+.view-link{
+
+    height:40px;
+
+    font-size:11px;
+
+    border-radius:8px;
+
+}
+
+/* Footer */
+
+.footer{
+
+    padding:14px;
+
+}
+
+#count{
+
+    font-size:11px;
+
+}
+
+.site-footer{
+
+    font-size:11px;
+
+    padding:16px;
+
+}
+
+/* Pagination */
+
+#pagination{
+
+    gap:6px;
+
+}
+
+#pagination button{
+
+    min-width:34px;
+
+    height:34px;
+
+    font-size:11px;
+
 }
 
 }
+
+/*==================================================
+EXTRA DARK MODE FIXES
+==================================================*/
+
+body.dark .table-section{
+
+    background:#1E293B;
+
+}
+
+body.dark .filters{
+
+    background:#1E293B;
+
+}
+
+body.dark .table-title{
+
+    background:#263445;
+
+}
+
+body.dark .notification-title{
+
+    color:#F8FAFC;
+
+}
+
+body.dark td{
+
+    color:#F8FAFC;
+
+}
+
+body.dark .category-badge{
+
+    color:#FFFFFF;
+
+}
+
+body.dark input,
+
+body.dark select{
+
+    background:#334155;
+
+    color:#F8FAFC;
+
+    border-color:#475569;
+
+}
+
+body.dark input::placeholder{
+
+    color:#CBD5E1;
+
+}
+
+body.dark #suggestions{
+
+    background:#1E293B;
+
+    border-color:#475569;
+
+}
+
+body.dark .suggestion{
+
+    color:#F8FAFC;
+
+}
+
+body.dark .suggestion:hover,
+
+body.dark .suggestion.active{
+
+    background:#334155;
+
+}
+
+body.dark .search-button button{
+
+    background:#2563EB;
+
+}
+
+body.dark .search-button button:hover{
+
+    background:#1D4ED8;
+
+}
+
+/*==================================================
+SMOOTH TRANSITIONS
+==================================================*/
+
+body,
+
+.header,
+
+.filters,
+
+.table-section,
+
+.table-title,
+
+.footer,
+
+.site-footer,
+
+input,
+
+select,
+
+button,
+
+.view-link,
+
+tbody tr{
+
+    transition:
+
+        background-color .30s ease,
+
+        color .30s ease,
+
+        border-color .30s ease,
+
+        box-shadow .30s ease,
+
+        transform .20s ease;
+
+}
+
+/*==================================================
+PERFORMANCE
+==================================================*/
+
+tbody tr{
+
+    will-change:transform;
+
+}
+
+.view-link,
+
+button{
+
+    will-change:transform;
+
+}
+
+/*==================================================
+END OF VERSION 4.1
+==================================================*/
