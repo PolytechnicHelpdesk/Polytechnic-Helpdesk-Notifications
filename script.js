@@ -86,13 +86,25 @@ if(themeToggle){
 
 fetch("./notifications.json")
 
+.then(response=>{
+
+    if(!response.ok){
+
+        throw new Error("Unable to load notifications.json");
+
+    }
+
+    return response.json();
+
+})
+
 .then(data=>{
 
-    notifications=data;
+    notifications = data;
 
     sortNotifications();
 
-    filteredNotifications=[...notifications];
+    filteredNotifications = [...notifications];
 
     loadCategories();
 
@@ -103,24 +115,6 @@ fetch("./notifications.json")
     renderPage();
 
     preloadLinks();
-
-})
-
-.then(data=>{
-
-    notifications=data;
-
-    sortNotifications();
-
-    filteredNotifications=[...notifications];
-
-    loadCategories();
-
-    loadYears();
-
-    loadTheme();
-
-    renderPage();
 
 })
 
