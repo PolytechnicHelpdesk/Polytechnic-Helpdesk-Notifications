@@ -39,10 +39,7 @@ fetch("notifications.json")
     loadCategories();
 
     loadYears();
-
-    updateStatistics();
-
-    renderPage();
+renderPage();
 
 })
 
