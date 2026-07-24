@@ -172,7 +172,7 @@ DARK MODE BUTTON
 
     border:none;
 
-    background:linear-gradient(135deg,#111827,#000000);
+    background:linear-gradient(135deg,#374151,#1F2937);
 
     color:#FFD54F;
 
@@ -188,17 +188,25 @@ DARK MODE BUTTON
 
     transition:.3s;
 
-    box-shadow:0 4px 12px rgba(0,0,0,.18);
+    box-shadow:0 4px 12px rgba(0,0,0,.20);
 
 }
 
 #themeToggle:hover{
 
-    background:linear-gradient(135deg,#000,#111827);
+    background:linear-gradient(135deg,#4B5563,#374151);
 
-    color:#fff;
+    color:#FFFFFF;
 
     transform:translateY(-2px);
+
+    box-shadow:0 6px 16px rgba(0,0,0,.28);
+
+}
+
+#themeToggle:active{
+
+    transform:translateY(0);
 
 }
 
