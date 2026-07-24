@@ -1159,6 +1159,32 @@ SEARCH PANEL
 }
 
 .search-box input,
+.filters{
+
+    scroll-margin-top:10px;
+
+}
+#suggestions{
+
+    position:fixed;
+
+    left:12px;
+
+    right:12px;
+
+    top:190px;
+
+    max-height:220px;
+
+    overflow-y:auto;
+
+    z-index:99999;
+
+    border-radius:10px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.20);
+
+}
 
 .filter-item input,
 

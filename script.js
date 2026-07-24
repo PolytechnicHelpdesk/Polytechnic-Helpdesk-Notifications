@@ -562,7 +562,23 @@ function showSuggestions(keyword){
 
     });
 
-    suggestions.style.display="block";
+    suggestions.style.display = "block";
+
+if(window.innerWidth <= 768){
+
+    setTimeout(()=>{
+
+        document.querySelector(".filters").scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"start"
+
+        });
+
+    },100);
+
+}
 
 }
 
@@ -589,7 +605,25 @@ if(searchInput){
         }
 
     );
+searchInput.addEventListener("focus",()=>{
 
+    if(window.innerWidth<=768){
+
+        setTimeout(()=>{
+
+            document.querySelector(".filters").scrollIntoView({
+
+                behavior:"smooth",
+
+                block:"start"
+
+            });
+
+        },350);
+
+    }
+
+});
     searchInput.addEventListener(
 
         "keydown",
