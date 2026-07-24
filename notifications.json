@@ -149,7 +149,7 @@
     "category": "Result",
     "title": "JLEE & JMEE 2026 Result/Scorecard Now Available To Download",
     "status": "ACTIVE",
-    "pinned": false,
+    "pinned": true,
     "links": [
       {
         "name": "View Result",
@@ -194,7 +194,7 @@
     "category": "Notice",
     "title": "Important Notice: Online Application for Original Diploma Certificate for Diploma Pass-Out Students",
     "status": "ACTIVE",
-    "pinned": true,
+    "pinned": false,
     "links": [
       {
         "name": "View Notice",
