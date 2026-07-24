@@ -712,9 +712,11 @@ ACTION BUTTONS
 
     padding:0 18px;
 
-    background:var(--primary);
+    background:#EEF4FB;
 
-    color:#fff;
+    color:#0F4C81;
+
+    border:1px solid #D9DEE6;
 
     border-radius:8px;
 
@@ -728,13 +730,15 @@ ACTION BUTTONS
 
     transition:.25s;
 
-    box-shadow:0 2px 6px rgba(0,0,0,.12);
-
 }
 
 .view-link:hover{
 
-    background:var(--primary-dark);
+    background:#0F4C81;
+
+    color:#FFFFFF;
+
+    border-color:#0F4C81;
 
     transform:translateY(-2px);
 
@@ -1726,6 +1730,25 @@ body.dark .search-button button{
 body.dark .search-button button:hover{
 
     background:#1D4ED8;
+
+}
+body.dark .view-link{
+
+    background:#334155;
+
+    color:#F8FAFC;
+
+    border:1px solid #475569;
+
+}
+
+body.dark .view-link:hover{
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+
+    border-color:#2563EB;
 
 }
 
