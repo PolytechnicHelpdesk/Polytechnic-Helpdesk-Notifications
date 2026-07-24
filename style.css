@@ -61,42 +61,6 @@ CONTAINER
     padding:0 18px;
 }
 
-/*==============================
-STATISTICS
-==============================*/
-
-.statistics{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-    margin-bottom:22px;
-}
-
-.stat-card{
-    background:#fff;
-    border:1px solid #d9dee6;
-    border-radius:10px;
-    padding:18px;
-    text-align:center;
-    transition:.2s;
-}
-
-.stat-card:hover{
-    transform:translateY(-2px);
-    box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-.stat-card h3{
-    font-size:14px;
-    color:#666;
-    margin-bottom:8px;
-}
-
-.stat-card p{
-    font-size:28px;
-    color:#0F4C81;
-    font-weight:700;
-}
 
 /*==============================
 SEARCH PANEL
@@ -443,24 +407,6 @@ MOBILE VIEW
     padding:12px;
 }
 
-/* Statistics */
-
-.statistics{
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
-}
-
-.stat-card{
-    padding:14px;
-}
-
-.stat-card h3{
-    font-size:12px;
-}
-
-.stat-card p{
-    font-size:22px;
-}
 
 /* Search */
 

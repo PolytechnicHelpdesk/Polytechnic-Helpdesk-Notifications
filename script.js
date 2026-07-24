@@ -133,33 +133,6 @@ function loadYears(){
 }
 
 
-
-// ============================================
-// STATISTICS
-// ============================================
-
-function updateStatistics(){
-
-    const total = notifications.length;
-
-    const newest = notifications.filter(
-        n => n.status.toUpperCase() === "NEW"
-    ).length;
-
-    const active = notifications.filter(
-        n => n.status.toUpperCase() === "ACTIVE"
-    ).length;
-
-    const deactivated = notifications.filter(
-        n => n.status.toUpperCase() === "DEACTIVATED"
-    ).length;
-
-    document.getElementById("totalCount").textContent = total;
-    document.getElementById("newCount").textContent = newest;
-    document.getElementById("activeCount").textContent = active;
-    document.getElementById("deactivatedCount").textContent = deactivated;
-
-}
 // ============================================
 // RENDER CURRENT PAGE
 // ============================================
