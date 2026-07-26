@@ -489,6 +489,7 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     column-gap: 8px;
     row-gap: 6px;
     overflow: hidden;
@@ -566,15 +567,13 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
   }
   td.date-cell{
     order: 3;
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: flex-end;
+    flex: 0 1 auto;
+    display: inline-flex;
     align-items: baseline;
     gap: 5px;
     font-family: var(--font-body);
     font-size: 11.5px;
     color: var(--ink-faint);
-    text-align: right;
     white-space: nowrap;
   }
   .relative-time::before{ content: "\2022"; margin-right: 5px; }
