@@ -42,14 +42,6 @@
           <option value="">All Categories</option>
         </select>
       </div>
-      <div class="field">
-        <label for="statusFilter">Status</label>
-        <select id="statusFilter">
-          <option value="">All Status</option>
-          <option value="active">Active</option>
-          <option value="inactive">Inactive</option>
-        </select>
-      </div>
       <button id="applyFilters" class="btn-primary" type="button">
         <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 5h18M6 12h12M10 19h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         Apply Filters
@@ -81,7 +73,7 @@
               <th data-key="title" class="sortable col-title">Notification Title <span class="sort-ico"></span></th>
               <th data-key="category" class="sortable col-category">Category <span class="sort-ico"></span></th>
               <th data-key="isoDate" class="sortable col-date">Date Published <span class="sort-ico"></span></th>
-              <th class="col-status">Status</th>
+              <th class="col-flags" aria-label="Flags"></th>
               <th class="col-link">Link</th>
             </tr>
           </thead>

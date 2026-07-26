@@ -49,7 +49,6 @@
   const pagination = document.getElementById("pagination");
   const emptyState = document.getElementById("emptyState");
   const categoryFilter = document.getElementById("categoryFilter");
-  const statusFilter = document.getElementById("statusFilter");
   const searchInput = document.getElementById("searchInput");
   const searchSuggestions = document.getElementById("searchSuggestions");
   const pageSizeSelect = document.getElementById("pageSize");
@@ -102,12 +101,9 @@
   function compute() {
     const term = searchInput.value.trim().toLowerCase();
     const cat = categoryFilter.value;
-    const status = statusFilter.value;
 
     filtered = allData.filter((item) => {
       if (cat && item.category !== cat) return false;
-      if (status === "active" && !item.isActive) return false;
-      if (status === "inactive" && item.isActive) return false;
       if (term && !(item.title.toLowerCase().includes(term) || item.category.toLowerCase().includes(term))) {
         return false;
       }
@@ -149,9 +145,6 @@
       const newBadge = item.isNew ? '<span class="new-badge">NEW</span>' : "";
       const pinned = isPinned(item);
       const pinnedBadge = pinned ? '<span class="pinned-badge">PINNED</span>' : "";
-      const statusHtml = item.isActive
-        ? '<span class="status-badge active">Active</span>'
-        : '<span class="status-badge inactive">Inactive</span>';
 
       return `
         <tr class="${pinned ? "is-pinned" : ""}" style="--accent:${style.accent}">
@@ -159,7 +152,7 @@
           <td class="col-title" data-label="Notification" style="border-left-color:${style.accent}">${escapeHtml(item.title)}</td>
           <td data-label="Category"><span class="category-pill" style="background:${style.bg};color:${style.text}">${escapeHtml(item.category)}</span></td>
           <td class="date-cell" data-label="Date Published">${item.date}<span class="relative-time">${relativeTime(item.isoDate)}</span></td>
-          <td class="status-cell" data-label="Status">${statusHtml}${newBadge}${pinnedBadge}</td>
+          <td class="flags-cell" data-label="Flags">${newBadge}${pinnedBadge}</td>
           <td class="col-link" data-label="Link"><div class="link-cell">${linksHtml}</div></td>
         </tr>`;
     }).join("");
@@ -330,7 +323,6 @@
   });
 
   categoryFilter.addEventListener("change", () => { currentPage = 1; applyAndRender(); });
-  statusFilter.addEventListener("change", () => { currentPage = 1; applyAndRender(); });
   applyBtn.addEventListener("click", () => { currentPage = 1; applyAndRender(); });
 
   pageSizeSelect.addEventListener("change", () => {
@@ -341,7 +333,6 @@
 
   function clearFilters() {
     categoryFilter.value = "";
-    statusFilter.value = "";
     searchInput.value = "";
     currentPage = 1;
     applyAndRender();

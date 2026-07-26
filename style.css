@@ -108,7 +108,7 @@ a{ color: inherit; }
 
 .panel{
   background: var(--card-bg);
-  border: 1px solid var(--line);
+  border: 1.5px solid #c7d0dc;
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   padding: 18px 20px;
@@ -208,7 +208,7 @@ select:focus-visible, input:focus-visible, button:focus-visible, .page-btn:focus
 }
 .entries-control select{ padding: 6px 10px; }
 
-.search-field{ min-width: 220px; }
+.search-field{ flex: 1 1 260px; }
 .search-wrap{ position: relative; }
 .search-wrap input{ width: 100%; }
 .search-icon{
@@ -283,7 +283,7 @@ select:focus-visible, input:focus-visible, button:focus-visible, .page-btn:focus
 
 .table-scroll{
   overflow-x: auto;
-  border: 1px solid var(--line);
+  border: 1.5px solid #c7d0dc;
   border-radius: 8px;
 }
 
@@ -323,7 +323,7 @@ tbody tr:last-child{ border-bottom: none; }
 tbody tr:hover{ background: var(--sky-tint); }
 tbody td{
   padding: 13px 14px;
-  vertical-align: top;
+  vertical-align: middle;
   font-size: 14px;
   color: var(--ink);
   border-left: 3px solid transparent;
@@ -354,20 +354,8 @@ td.col-title .row-accent{ border-left-width: 3px; }
   margin-top: 2px;
 }
 
-.status-badge{
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 3px 10px;
-  border-radius: 999px;
-}
-.status-badge.active{ background: #e6f6ea; color: var(--green-ink); }
-.status-badge.inactive{ background: #fbeaea; color: var(--red-soft); }
 .new-badge{
   display: inline-block;
-  margin-left: 6px;
   font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.04em;
@@ -384,7 +372,6 @@ tbody tr.is-pinned:hover{ background: #fbf1da; }
 tbody tr.is-pinned td.col-title{ border-left-color: var(--amber) !important; }
 .pinned-badge{
   display: inline-block;
-  margin-left: 6px;
   font-size: 10.5px;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -394,6 +381,7 @@ tbody tr.is-pinned td.col-title{ border-left-color: var(--amber) !important; }
   border-radius: 5px;
   vertical-align: middle;
 }
+.flags-cell > span + span{ margin-left: 6px; }
 
 .link-cell{ display: flex; flex-direction: column; gap: 6px; }
 .link-btn{
@@ -538,8 +526,8 @@ tbody tr.is-pinned td.col-title{ border-left-color: var(--amber) !important; }
   }
   td.col-sl::before{ content: "#"; }
 
-  /* Status (+ New/Pinned flags) — grouped pill cluster, top-right corner, out of flow */
-  td[data-label="Status"]{
+  /* New/Pinned flags — grouped pill cluster, top-right corner, out of flow */
+  td[data-label="Flags"]{
     position: absolute;
     top: 9px;
     right: 14px;
@@ -550,7 +538,6 @@ tbody tr.is-pinned td.col-title{ border-left-color: var(--amber) !important; }
     flex-wrap: wrap;
     row-gap: 4px;
   }
-  td[data-label="Status"] .status-badge{ padding: 2px 9px; font-size: 11px; }
 
   /* Title — full-width headline, room made for the corner marks */
   td.col-title{

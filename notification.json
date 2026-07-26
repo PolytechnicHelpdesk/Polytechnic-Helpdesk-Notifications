@@ -6,10 +6,12 @@
     "date": "7th August 2025",
     "isoDate": "2025-08-07",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://infowebuseras.wixsite.com/polytechnichelpdesk/gadgets" }
+      {
+        "label": "View",
+        "url": "https://infowebuseras.wixsite.com/polytechnichelpdesk/gadgets"
+      }
     ]
   },
   {
@@ -19,10 +21,12 @@
     "date": "7th August 2025",
     "isoDate": "2025-08-07",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://drive.google.com/file/d/12S3y8F2n9Bjef23e7u1jF_rtj48FQHz8/view?usp=drive_link" }
+      {
+        "label": "View",
+        "url": "https://drive.google.com/file/d/12S3y8F2n9Bjef23e7u1jF_rtj48FQHz8/view?usp=drive_link"
+      }
     ]
   },
   {
@@ -32,10 +36,12 @@
     "date": "18th November 2025",
     "isoDate": "2025-11-18",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://infowebuseras.wixsite.com/civil/copy-of-4th-sem" }
+      {
+        "label": "View",
+        "url": "https://infowebuseras.wixsite.com/civil/copy-of-4th-sem"
+      }
     ]
   },
   {
@@ -45,10 +51,12 @@
     "date": "6th December 2025",
     "isoDate": "2025-12-06",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://drive.google.com/file/d/1M8h8KJ8-Bp_qyxsaeKCKPW1bBWncVDdy/view?usp=drive_link" }
+      {
+        "label": "View",
+        "url": "https://drive.google.com/file/d/1M8h8KJ8-Bp_qyxsaeKCKPW1bBWncVDdy/view?usp=drive_link"
+      }
     ]
   },
   {
@@ -58,10 +66,12 @@
     "date": "27th January 2026",
     "isoDate": "2026-01-27",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://drive.google.com/file/d/1y9Rbb3XGw3Q5y54kZYh7eNcsHutsOtKm/view" }
+      {
+        "label": "View",
+        "url": "https://drive.google.com/file/d/1y9Rbb3XGw3Q5y54kZYh7eNcsHutsOtKm/view"
+      }
     ]
   },
   {
@@ -71,10 +81,12 @@
     "date": "10th June 2026",
     "isoDate": "2026-06-10",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://drive.google.com/file/d/1aoRMf5ne0HoGf45hM3LxIlrt-ak2HbPb/view?usp=drive_link" }
+      {
+        "label": "View",
+        "url": "https://drive.google.com/file/d/1aoRMf5ne0HoGf45hM3LxIlrt-ak2HbPb/view?usp=drive_link"
+      }
     ]
   },
   {
@@ -84,10 +96,12 @@
     "date": "18th June 2026",
     "isoDate": "2026-06-18",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://drive.google.com/file/d/1afD9CLO_I2MRUGQ13dLY-VsSy3q_lkfy/view" }
+      {
+        "label": "View",
+        "url": "https://drive.google.com/file/d/1afD9CLO_I2MRUGQ13dLY-VsSy3q_lkfy/view"
+      }
     ]
   },
   {
@@ -97,11 +111,16 @@
     "date": "24th June 2026",
     "isoDate": "2026-06-24",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "JLEE 2026 Answer Key", "url": "https://drive.google.com/file/d/1TIIn6tqDa-S-GCUI6M-Eg9PqmPJdNAxh/view?usp=drive_link" },
-      { "label": "JMEE 2026 Answer Key", "url": "https://drive.google.com/file/d/1C4cMTjR9nP7opcpAGRw_c_F8b0FvZp5t/view?usp=sharing" }
+      {
+        "label": "JLEE 2026 Answer Key",
+        "url": "https://drive.google.com/file/d/1TIIn6tqDa-S-GCUI6M-Eg9PqmPJdNAxh/view?usp=drive_link"
+      },
+      {
+        "label": "JMEE 2026 Answer Key",
+        "url": "https://drive.google.com/file/d/1C4cMTjR9nP7opcpAGRw_c_F8b0FvZp5t/view?usp=sharing"
+      }
     ]
   },
   {
@@ -111,11 +130,16 @@
     "date": "30th June 2026",
     "isoDate": "2026-06-30",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "Academic Calender 2024-25", "url": "https://aei.ac.in/wp-content/uploads/2024/09/Academic-Calander-2024-25.pdf" },
-      { "label": "Academic Calender 2025-26", "url": "https://scteassam.com/calendar/e4da3b7fbbce2345d7772b0674a318d5.pdf" }
+      {
+        "label": "Academic Calender 2024-25",
+        "url": "https://aei.ac.in/wp-content/uploads/2024/09/Academic-Calander-2024-25.pdf"
+      },
+      {
+        "label": "Academic Calender 2025-26",
+        "url": "https://scteassam.com/calendar/e4da3b7fbbce2345d7772b0674a318d5.pdf"
+      }
     ]
   },
   {
@@ -125,10 +149,12 @@
     "date": "1st July 2026",
     "isoDate": "2026-07-01",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://drive.google.com/file/d/1zDkNW-3gMn0vOlzHRHLNhkZ9uCX_UGTF/view?usp=sharing" }
+      {
+        "label": "View",
+        "url": "https://drive.google.com/file/d/1zDkNW-3gMn0vOlzHRHLNhkZ9uCX_UGTF/view?usp=sharing"
+      }
     ]
   },
   {
@@ -138,10 +164,12 @@
     "date": "3rd July 2026",
     "isoDate": "2026-07-03",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://astu.formsrec.in/ASTU_JMEE_JLEE/" }
+      {
+        "label": "View",
+        "url": "https://astu.formsrec.in/ASTU_JMEE_JLEE/"
+      }
     ]
   },
   {
@@ -151,10 +179,12 @@
     "date": "11th July 2026",
     "isoDate": "2026-07-11",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://drive.google.com/file/d/1YezZg08hnTtkgThdlRxVAdM8yyFS1MdY/view?usp=drive_link" }
+      {
+        "label": "View",
+        "url": "https://drive.google.com/file/d/1YezZg08hnTtkgThdlRxVAdM8yyFS1MdY/view?usp=drive_link"
+      }
     ]
   },
   {
@@ -164,10 +194,12 @@
     "date": "12th July 2026",
     "isoDate": "2026-07-12",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://gad.assam.gov.in/sites/default/files/public_utility/Holiday%20List%20%2C%202026.pdf" }
+      {
+        "label": "View",
+        "url": "https://gad.assam.gov.in/sites/default/files/public_utility/Holiday%20List%20%2C%202026.pdf"
+      }
     ]
   },
   {
@@ -177,10 +209,12 @@
     "date": "15th July 2026",
     "isoDate": "2026-07-15",
     "isNew": false,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://drive.google.com/file/d/1fwEOcESDUhkhMDAiUjG51C3Y9xG4umQL/view?usp=sharing" }
+      {
+        "label": "View",
+        "url": "https://drive.google.com/file/d/1fwEOcESDUhkhMDAiUjG51C3Y9xG4umQL/view?usp=sharing"
+      }
     ]
   },
   {
@@ -190,10 +224,12 @@
     "date": "17th July 2026",
     "isoDate": "2026-07-17",
     "isNew": true,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1006/" }
+      {
+        "label": "View",
+        "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1006/"
+      }
     ]
   },
   {
@@ -203,10 +239,12 @@
     "date": "21st July 2026",
     "isoDate": "2026-07-21",
     "isNew": true,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1007/" }
+      {
+        "label": "View",
+        "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1007/"
+      }
     ]
   },
   {
@@ -216,10 +254,12 @@
     "date": "22nd July 2026",
     "isoDate": "2026-07-22",
     "isNew": true,
-    "isActive": true,
     "isPinned": false,
     "links": [
-      { "label": "View", "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1008/" }
+      {
+        "label": "View",
+        "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1008/"
+      }
     ]
   }
 ]
