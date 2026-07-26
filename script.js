@@ -49,10 +49,10 @@
   const pagination = document.getElementById("pagination");
   const emptyState = document.getElementById("emptyState");
   const categoryFilter = document.getElementById("categoryFilter");
+  const yearFilter = document.getElementById("yearFilter");
   const searchInput = document.getElementById("searchInput");
   const searchSuggestions = document.getElementById("searchSuggestions");
   const pageSizeSelect = document.getElementById("pageSize");
-  const applyBtn = document.getElementById("applyFilters");
   const resetBtn = document.getElementById("resetFilters");
   const emptyResetBtn = document.getElementById("emptyReset");
   const liveClock = document.getElementById("liveClock");
@@ -98,12 +98,24 @@
     });
   }
 
+  function populateYearOptions() {
+    const years = Array.from(new Set(allData.map((d) => d.isoDate.slice(0, 4)))).sort((a, b) => b - a);
+    years.forEach((year) => {
+      const opt = document.createElement("option");
+      opt.value = year;
+      opt.textContent = year;
+      yearFilter.appendChild(opt);
+    });
+  }
+
   function compute() {
     const term = searchInput.value.trim().toLowerCase();
     const cat = categoryFilter.value;
+    const year = yearFilter.value;
 
     filtered = allData.filter((item) => {
       if (cat && item.category !== cat) return false;
+      if (year && item.isoDate.slice(0, 4) !== year) return false;
       if (term && !(item.title.toLowerCase().includes(term) || item.category.toLowerCase().includes(term))) {
         return false;
       }
@@ -323,7 +335,7 @@
   });
 
   categoryFilter.addEventListener("change", () => { currentPage = 1; applyAndRender(); });
-  applyBtn.addEventListener("click", () => { currentPage = 1; applyAndRender(); });
+  yearFilter.addEventListener("change", () => { currentPage = 1; applyAndRender(); });
 
   pageSizeSelect.addEventListener("change", () => {
     pageSize = parseInt(pageSizeSelect.value, 10);
@@ -333,6 +345,7 @@
 
   function clearFilters() {
     categoryFilter.value = "";
+    yearFilter.value = "";
     searchInput.value = "";
     currentPage = 1;
     applyAndRender();
@@ -361,6 +374,7 @@
     .then((data) => {
       allData = data;
       populateCategoryOptions();
+      populateYearOptions();
       updateSortIcons();
       applyAndRender();
     })
