@@ -161,7 +161,7 @@
       return `
         <tr class="${pinned ? "is-pinned" : ""}" style="--accent:${style.accent}">
           <td class="col-sl" data-label="Sl. No">${item.slNo}</td>
-          <td class="col-title" data-label="Notification" style="border-left-color:${style.accent}">${escapeHtml(item.title)}</td>
+          <td class="col-title" data-label="Notification">${escapeHtml(item.title)}</td>
           <td data-label="Category"><span class="category-pill" style="background:${style.bg};color:${style.text}">${escapeHtml(item.category)}</span></td>
           <td class="date-cell" data-label="Date Published">${item.date}<span class="relative-time">${relativeTime(item.isoDate)}</span></td>
           <td class="flags-cell" data-label="Flags">${newBadge}${pinnedBadge}</td>
