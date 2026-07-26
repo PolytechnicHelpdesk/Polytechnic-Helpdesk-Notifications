@@ -305,7 +305,7 @@ thead th{
   letter-spacing: 0.03em;
   padding: 12px 14px;
   border-bottom: 1px solid var(--line);
-  border-right: 1px solid var(--line);
+  border-right: 1px solid #c7d0dc;
   white-space: nowrap;
 }
 thead th:last-child{ border-right: none; }
@@ -329,14 +329,17 @@ tbody td{
   vertical-align: middle;
   font-size: 14px;
   color: var(--ink);
-  border-right: 1px solid var(--line);
+  border-right: 1px solid #d5dbe3;
 }
 tbody td:last-child{ border-right: none; }
 tbody td.col-sl{
   font-family: var(--font-mono);
   color: var(--ink-faint);
   font-size: 13px;
+  text-align: center;
 }
+td[data-label="Category"]{ text-align: center; }
+.flags-cell{ text-align: center; }
 td.col-title{ font-weight: 600; color: var(--navy-900); max-width: 360px; box-shadow: inset 3px 0 0 var(--accent, var(--blue-600)); }
 
 .category-pill{
