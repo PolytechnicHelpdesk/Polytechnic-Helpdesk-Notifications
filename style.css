@@ -526,7 +526,7 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     top: 8px;
     left: 12px;
     font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 9px;
     color: var(--ink-faint);
     letter-spacing: 0.02em;
   }
@@ -544,6 +544,8 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     flex-wrap: wrap;
     row-gap: 4px;
   }
+  td[data-label="Flags"] .new-badge{ font-size: 9px; padding: 1px 6px; }
+  td[data-label="Flags"] .pinned-badge{ font-size: 9px; padding: 1px 5px; }
 
   /* Title — full-width headline, room made for the corner marks */
   td.col-title{
@@ -554,6 +556,8 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     font-size: 13px;
     line-height: 1.4;
     margin-top: 13px;
+    text-align: justify;
+    text-justify: inter-word;
     box-shadow: none !important;
   }
   /* the pinned-row accent (desktop-only) uses an equally-specific !important
@@ -567,9 +571,6 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     order: 2;
     flex: 1 1 0;
     min-width: 0;
-    text-align: left;
-  }
-  td.col-sl{
     text-align: left;
   }
   td[data-label="Category"] .category-pill{
