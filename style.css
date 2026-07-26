@@ -224,13 +224,14 @@ select:focus-visible, input:focus-visible, button:focus-visible, .page-btn:focus
 }
 .search-wrap input#searchInput{
   padding-left: 38px;
-  border: 1.5px solid var(--blue-500);
-  box-shadow: 0 1px 3px rgba(43,116,199,0.12), 0 0 0 3px rgba(43,116,199,0.08);
+  border: 1px solid #bcd4ea;
+  box-shadow: none;
   background: #fbfdff;
 }
 .search-wrap input#searchInput::placeholder{ color: var(--ink-faint); }
 .search-wrap input#searchInput:focus-visible{
-  box-shadow: 0 0 0 3px rgba(43,116,199,0.18);
+  border-color: var(--blue-500);
+  box-shadow: 0 0 0 3px rgba(43,116,199,0.12);
 }
 
 .search-suggestions{
