@@ -51,11 +51,12 @@ a{ color: inherit; }
 .site-header{
   background: linear-gradient(135deg, var(--navy-950), var(--navy-800));
   color: #fff;
-  padding: 22px 28px;
+  padding: 22px 0;
 }
 .header-inner{
   max-width: 1180px;
   margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -294,7 +295,7 @@ table{
 }
 
 thead th{
-  text-align: left;
+  text-align: center;
   background: var(--sky-tint);
   color: var(--navy-800);
   font-family: var(--font-body);
@@ -304,8 +305,10 @@ thead th{
   letter-spacing: 0.03em;
   padding: 12px 14px;
   border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
   white-space: nowrap;
 }
+thead th:last-child{ border-right: none; }
 thead th:first-child, tbody td:first-child{
   padding-left: 0;
 }
@@ -327,7 +330,9 @@ tbody td{
   font-size: 14px;
   color: var(--ink);
   border-left: 3px solid transparent;
+  border-right: 1px solid var(--line);
 }
+tbody td:last-child{ border-right: none; }
 tbody td.col-sl{
   font-family: var(--font-mono);
   color: var(--ink-faint);
@@ -462,6 +467,7 @@ tbody tr.is-pinned td.col-title{ border-left-color: var(--amber) !important; }
   .search-wrap input{ width: 100%; }
   .table-controls{ flex-direction: column; align-items: stretch; }
   .filter-panel{ flex-direction: column; align-items: stretch; }
+  .search-field{ flex: 0 1 auto; }
   .field{ min-width: 0; }
 
   /* Free up width by trimming the nested page/card padding */
