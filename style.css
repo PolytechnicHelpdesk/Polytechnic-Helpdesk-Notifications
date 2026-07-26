@@ -567,6 +567,10 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     order: 2;
     flex: 1 1 0;
     min-width: 0;
+    text-align: left;
+  }
+  td.col-sl{
+    text-align: left;
   }
   td[data-label="Category"] .category-pill{
     display: inline-block;
