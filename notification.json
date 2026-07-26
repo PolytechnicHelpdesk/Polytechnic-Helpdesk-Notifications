@@ -164,7 +164,7 @@
     "date": "3rd July 2026",
     "isoDate": "2026-07-03",
     "isNew": false,
-    "isPinned": false,
+    "isPinned": true,
     "links": [
       {
         "label": "View",
