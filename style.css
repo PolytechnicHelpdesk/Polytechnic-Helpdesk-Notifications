@@ -309,9 +309,6 @@ thead th{
   white-space: nowrap;
 }
 thead th:last-child{ border-right: none; }
-thead th:first-child, tbody td:first-child{
-  padding-left: 0;
-}
 th.sortable{ cursor: pointer; user-select: none; }
 th.sortable:hover{ color: var(--blue-600); }
 .sort-ico{ display: inline-block; width: 10px; opacity: 0.6; }
@@ -555,8 +552,11 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     font-size: 14.5px;
     line-height: 1.4;
     margin-top: 14px;
-    box-shadow: none;
+    box-shadow: none !important;
   }
+  /* the pinned-row accent (desktop-only) uses an equally-specific !important
+     selector, so it needs a matching override here to actually be cancelled */
+  tbody tr.is-pinned td.col-title{ box-shadow: none !important; }
 
   /* Category chip + date share one line, pushed to opposite ends */
   td[data-label="Category"]{
