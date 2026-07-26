@@ -208,16 +208,9 @@ select:focus-visible, input:focus-visible, button:focus-visible, .page-btn:focus
 }
 .entries-control select{ padding: 6px 10px; }
 
-.search-control{ display: flex; align-items: center; gap: 8px; }
-.search-control label{
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--ink-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
+.search-field{ min-width: 220px; }
 .search-wrap{ position: relative; }
-.search-wrap input{ width: 260px; }
+.search-wrap input{ width: 100%; }
 .search-icon{
   position: absolute;
   left: 13px;
@@ -477,7 +470,6 @@ tbody tr.is-pinned td.col-title{ border-left-color: var(--amber) !important; }
   .live-clock{ display: none; }
   .brand{ flex-direction: column; gap: 8px; }
   .brand-mark{ width: 56px; height: 56px; }
-  .search-control{ width: 100%; }
   .search-wrap{ width: 100%; }
   .search-wrap input{ width: 100%; }
   .table-controls{ flex-direction: column; align-items: stretch; }
@@ -546,11 +538,17 @@ tbody tr.is-pinned td.col-title{ border-left-color: var(--amber) !important; }
   }
   td.col-sl::before{ content: "#"; }
 
-  /* Status — small pill, top-right corner, out of flow */
+  /* Status (+ New/Pinned flags) — grouped pill cluster, top-right corner, out of flow */
   td[data-label="Status"]{
     position: absolute;
     top: 9px;
     right: 14px;
+    max-width: calc(100% - 56px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    row-gap: 4px;
   }
   td[data-label="Status"] .status-badge{ padding: 2px 9px; font-size: 11px; }
 
@@ -562,7 +560,7 @@ tbody tr.is-pinned td.col-title{ border-left-color: var(--amber) !important; }
     color: var(--navy-900);
     font-size: 14.5px;
     line-height: 1.4;
-    margin-top: 11px;
+    margin-top: 14px;
   }
 
   /* Category chip + date share one line, pushed to opposite ends */
