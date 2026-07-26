@@ -489,14 +489,14 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    column-gap: 8px;
-    row-gap: 6px;
+    column-gap: 6px;
+    row-gap: 5px;
     overflow: hidden;
     background: #fff;
     border: 1px solid var(--line);
     border-radius: 14px;
-    margin-bottom: 10px;
-    padding: 14px 14px 12px;
+    margin-bottom: 8px;
+    padding: 12px 12px 10px;
     box-shadow: var(--shadow-card);
   }
   /* colored accent strip along the top edge, keyed to the category */
@@ -514,7 +514,7 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     padding: 0;
     margin: 0;
     border: none !important;
-    font-size: 13.5px;
+    font-size: 13px;
     line-height: 1.35;
   }
   td::before{ content: none; } /* labels are dropped on mobile — the layout speaks for itself */
@@ -522,10 +522,10 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
   /* Sl. No — small, top-left corner, out of flow */
   td.col-sl{
     position: absolute;
-    top: 9px;
-    left: 14px;
+    top: 8px;
+    left: 12px;
     font-family: var(--font-mono);
-    font-size: 11px;
+    font-size: 10.5px;
     color: var(--ink-faint);
     letter-spacing: 0.02em;
   }
@@ -534,9 +534,9 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
   /* New/Pinned flags — grouped pill cluster, top-right corner, out of flow */
   td[data-label="Flags"]{
     position: absolute;
-    top: 9px;
-    right: 14px;
-    max-width: calc(100% - 56px);
+    top: 8px;
+    right: 12px;
+    max-width: calc(100% - 50px);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -550,49 +550,58 @@ tbody tr.is-pinned td.col-title{ box-shadow: inset 3px 0 0 var(--amber) !importa
     flex: 1 1 100%;
     font-weight: 600;
     color: var(--navy-900);
-    font-size: 13.5px;
+    font-size: 13px;
     line-height: 1.4;
-    margin-top: 14px;
+    margin-top: 13px;
     box-shadow: none !important;
   }
   /* the pinned-row accent (desktop-only) uses an equally-specific !important
      selector, so it needs a matching override here to actually be cancelled */
   tbody tr.is-pinned td.col-title{ box-shadow: none !important; }
 
-  /* Category chip + date share one line, pushed to opposite ends */
+  /* Category chip + date: compact, sitting on one line whenever they fit;
+     neither one grows to fill the line, so a long category name never
+     leaves the date stranded with a big empty gap in front of it */
   td[data-label="Category"]{
     order: 2;
-    flex: 0 0 auto;
+    flex: 0 1 auto;
+    min-width: 0;
   }
-  td[data-label="Category"] .category-pill{ font-size: 10.5px; padding: 2px 8px; }
-  td.date-cell{
-    order: 3;
-    flex: 1 1 auto;
-    display: flex;
-    justify-content: flex-end;
-    align-items: baseline;
-    gap: 5px;
-    font-family: var(--font-body);
-    font-size: 10.5px;
-    color: var(--ink-faint);
-    text-align: right;
+  td[data-label="Category"] .category-pill{
+    font-size: 10px;
+    padding: 2px 7px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
-  .relative-time::before{ content: "\2022"; margin-right: 5px; }
+  td.date-cell{
+    order: 3;
+    flex: 0 1 auto;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    font-family: var(--font-body);
+    font-size: 10px;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .relative-time{ font-size: 10px; }
+  .relative-time::before{ content: "\2022"; margin-right: 4px; }
 
   /* Divider before the call-to-action */
   td.col-link{
     order: 4;
     flex: 1 1 100%;
-    padding-top: 10px;
-    margin-top: 2px;
+    padding-top: 8px;
+    margin-top: 1px;
     border-top: 1px dashed var(--line) !important;
   }
   .link-cell{ flex-direction: column; gap: 6px; }
   .link-btn{
     width: 100%;
-    padding: 9px 14px;
-    font-size: 12px;
+    padding: 8px 14px;
+    font-size: 11.5px;
     border-radius: 8px;
   }
 }
