@@ -288,7 +288,7 @@
     "date": "27th July 2026",
     "isoDate": "2026-07-27",
     "isNew": true,
-    "isPinned": true,
+    "isPinned": false,
     "links": [
       {
         "label": "Click Here For Details",

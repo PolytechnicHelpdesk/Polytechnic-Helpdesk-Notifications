@@ -132,7 +132,7 @@
       if (typeof vb === "string") vb = vb.toLowerCase();
       if (va < vb) return sortDir === "asc" ? -1 : 1;
       if (va > vb) return sortDir === "asc" ? 1 : -1;
-      return 0;
+      return b.slNo - a.slNo; // tie-breaker: higher Sl. No (more recently added) first
     });
   }
 
