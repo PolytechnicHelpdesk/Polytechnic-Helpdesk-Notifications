@@ -164,7 +164,7 @@
     "date": "3rd July 2026",
     "isoDate": "2026-07-03",
     "isNew": false,
-    "isPinned": true,
+    "isPinned": false,
     "links": [
       {
         "label": "View Result",
@@ -223,7 +223,7 @@
     "category": "Notice",
     "date": "17th July 2026",
     "isoDate": "2026-07-17",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
