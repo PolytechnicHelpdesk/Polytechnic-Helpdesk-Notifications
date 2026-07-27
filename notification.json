@@ -261,5 +261,44 @@
         "url": "https://polytechnichelpdesk.github.io/SN-IW-PH-2026-IN-1008/"
       }
     ]
+  },
+  {
+    "slNo": 18,
+    "title": "JMEE 2026: Online Counselling for 1st Semester MCA Admissions",
+    "category": "Notice",
+    "date": "27th July 2026",
+    "isoDate": "2026-07-27",
+    "isNew": true,
+    "isPinned": false,
+    "links": [
+      {
+        "label": "Click Here For Details",
+        "url": "https://dte.assam.gov.in/sites/default/files/swf_utility_folder/departments/dte_medhassu_in_oid_5/menu/right_menu/right_menu/jmee_2026.pdf"
+      },
+      {
+        "label": "Click Here To Apply",
+        "url": ""
+      }
+    ]
+  },
+  {
+    "slNo": 19,
+    "title": "JLEE 2026: Online Counselling for 3rd Semester B.Tech (Lateral Entry) Admissions",
+    "category": "Notice",
+    "date": "27th July 2026",
+    "isoDate": "2026-07-27",
+    "isNew": true,
+    "isPinned": false,
+    "links": [
+      {
+        "label": "Click Here For Details",
+        "url": "https://dte.assam.gov.in/sites/default/files/swf_utility_folder/departments/dte_medhassu_in_oid_5/menu/right_menu/right_menu/jlee_2026_ad.pdf"
+      },
+      {
+        "label": "Click Here To Apply",
+        "url": ""
+      }
+    ]
   }
+
 ]
