@@ -253,7 +253,7 @@
     "category": "Notice",
     "date": "22nd July 2026",
     "isoDate": "2026-07-22",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
