@@ -139,7 +139,12 @@
       {
         "label": "Academic Calender 2025-26",
         "url": "https://scteassam.com/calendar/e4da3b7fbbce2345d7772b0674a318d5.pdf"
+      },
+      {
+        "label": "Academic Calender 2026-27",
+        "url": "https://nalbaripolytechnic.in/document/Aca_cal_26-27.pdf"
       }
+
     ]
   },
   {
@@ -297,6 +302,21 @@
       {
         "label": "Click Here To Apply",
         "url": "https://dte-assambtechle.samarth.edu.in/"
+      }
+    ]
+  },
+  {
+    "slNo": 20,
+    "title": "SCTE Academic Calender 2026-2027",
+    "category": "Notice",
+    "date": "1st August 2026",
+    "isoDate": "2026-08-01",
+    "isNew": true,
+    "isPinned": false,
+    "links": [
+      {
+        "label": "Click Here",
+        "url": "https://nalbaripolytechnic.in/document/Aca_cal_26-27.pdf"
       }
     ]
   }
