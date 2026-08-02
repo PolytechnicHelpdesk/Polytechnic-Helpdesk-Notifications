@@ -273,7 +273,7 @@
     "category": "Notice",
     "date": "27th July 2026",
     "isoDate": "2026-07-27",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
@@ -292,7 +292,7 @@
     "category": "Notice",
     "date": "27th July 2026",
     "isoDate": "2026-07-27",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
