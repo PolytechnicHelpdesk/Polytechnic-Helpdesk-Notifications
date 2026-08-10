@@ -311,7 +311,7 @@
     "category": "Academic Calender",
     "date": "1st August 2026",
     "isoDate": "2026-08-01",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
@@ -326,7 +326,7 @@
     "category": "Notice",
     "date": "4th August 2026",
     "isoDate": "2026-08-04",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
