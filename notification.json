@@ -341,7 +341,7 @@
     "category": "Notice",
     "date": "1st September 2026",
     "isoDate": "2026-09-01",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
