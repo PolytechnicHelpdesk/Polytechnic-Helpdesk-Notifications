@@ -356,7 +356,7 @@
     "category": "Announcement",
     "date": "13th September 2026",
     "isoDate": "2026-09-13",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
