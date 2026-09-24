@@ -371,7 +371,7 @@
     "category": "Notice",
     "date": "17th September 2026",
     "isoDate": "2026-09-17",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
@@ -386,7 +386,7 @@
     "category": "Notice",
     "date": "17th September 2026",
     "isoDate": "2026-09-17",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
@@ -407,6 +407,25 @@
       {
         "label": "View",
         "url": "https://archive.org/download/sn-iw-ph-2026-in-1011signed_202609/SN-IW-PH-2026-IN-1011%5Bsigned%5D.pdf"
+      }
+    ]
+  },
+  {
+    "slNo": 27,
+    "title": "1st and 2nd Semester Retest (Old Syllabus) Examinations, October 2026",
+    "category": "Notice",
+    "date": "24th September 2026",
+    "isoDate": "2026-09-24",
+    "isNew": true,
+    "isPinned": false,
+    "links": [
+      {
+        "label": "Click Here For Details",
+        "url": "https://archive.org/download/1st-2nd-retest-notification-sep-2026/1st%2C%202nd%20Retest%20Notification%20Sep%202026.pdf"
+      },
+      {
+        "label": "ESE Retest Programme",
+        "url": "https://archive.org/download/1st-2nd-retest-programme-sep-2026/1st%2C%202nd%20Retest%20Programme%20Sep%202026.pdf"
       }
     ]
   }
