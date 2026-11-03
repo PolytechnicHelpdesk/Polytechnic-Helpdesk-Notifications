@@ -428,6 +428,21 @@
         "url": "https://archive.org/download/1st-2nd-retest-programme-sep-2026/1st%2C%202nd%20Retest%20Programme%20Sep%202026.pdf"
       }
     ]
+  },
+  {
+    "slNo": 28,
+    "title": "SCTE Announces NC/DC and ESE November/December 2026 Form Fill-Up Schedule",
+    "category": "Notice",
+    "date": "3rd November 2026",
+    "isoDate": "2026-11-03",
+    "isNew": true,
+    "isPinned": false,
+    "links": [
+      {
+        "label": "Click Here For Details",
+        "url": "https://archive.org/download/nc-dc-form-fillup-ese-nov-2026/NC%20DC%20%26%20Form%20fillup_ESE%20Nov%2C2026.pdf"
+      }
+    ]
   }
 
 ]
