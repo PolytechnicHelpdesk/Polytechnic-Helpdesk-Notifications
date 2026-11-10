@@ -435,7 +435,7 @@
     "category": "Notice",
     "date": "3rd November 2026",
     "isoDate": "2026-11-03",
-    "isNew": true,
+    "isNew": false,
     "isPinned": false,
     "links": [
       {
